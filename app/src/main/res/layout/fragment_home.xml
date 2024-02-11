@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/g_gray700"
+    tools:context=".fragments.HomeFragment">
+
+    <!-- TitleBar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/purple_200"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="HOME"
+                android:textSize="30dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textAlignment="center"
+
+                >
+            </TextView>
+
+        </LinearLayout>
+        <!-- SearchBar -->
+        <LinearLayout
+            android:id="@+id/searchBar_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/g_gray500"
+            >
+
+            <EditText
+                android:id="@+id/searchBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="Search"
+                android:textColor="@color/white"
+                />
+            <!--Search Button (make clickable to shop)-->
+            <ImageView
+                android:id="@+id/search_button"
+                android:layout_width="5dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                tools:src="@drawable/search_alt_svgrepo_com"
+                android:clickable="true"
+                android:contentDescription=""
+                />
+        </LinearLayout>
+
+        <!--Buttons Area (1st layer)-->
+        <LinearLayout
+            android:id="@+id/butt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="0.2"
+                android:orientation="vertical">
+            </LinearLayout>
+
+            <!--Shop-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="170dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/purple_200"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Shop"
+                    android:layout_margin="5dp"
+                    android:textSize="30dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold">
+                </TextView>
+                <!--Add image in background later-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--Shop-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="170dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/purple_200"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Guides"
+                    android:layout_margin="5dp"
+                    android:textSize="30dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold">
+                </TextView>
+                <!--Add image in background later-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <!--Buttons Area (1st layer)-->
+
+        <LinearLayout
+            android:id="@+id/buttonLayer2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="0.2"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="360dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/purple_200"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Featured"
+                    android:layout_margin="5dp"
+                    android:textSize="30dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold">
+                </TextView>
+                <!--Add image in background later-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+</FrameLayout>
