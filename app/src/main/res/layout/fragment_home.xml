@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/g_gray700"
+    android:background="@color/purple150"
     tools:context=".fragments.HomeFragment">
 
     <!-- TitleBar -->
@@ -22,10 +22,10 @@
             android:padding="15dp">
 
             <TextView
-                android:id="@+id/title"
+                android:id="@+id/homeicon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="HOME"
+                android:text="PCNUBBIES"
                 android:textSize="30dp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
@@ -40,7 +40,7 @@
             android:id="@+id/searchBar_background"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/g_gray500"
+            android:background="@color/purple150"
             >
 
             <EditText
@@ -53,7 +53,7 @@
                 android:ems="10"
                 android:inputType="text"
                 android:text="Search"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 />
             <!--Search Button (make clickable to shop)-->
             <ImageView
