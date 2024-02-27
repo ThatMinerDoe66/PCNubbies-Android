@@ -209,17 +209,9 @@
                 android:layout_marginEnd="10dp"
                 android:background="@color/purple_200">
 
-                <ImageView
-                    android:id="@+id/shop"
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/btn_shop"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="0dp" />
-
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="45dp"
                     android:layout_margin="5dp"
                     android:text="Shop"
                     android:textColor="@color/white"
