@@ -33,7 +33,7 @@ class guideStep7 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.step1_guide, container, false)
+        return inflater.inflate(R.layout.step7_guide, container, false)
     }
 
     private fun replaceFragment(fragment:Fragment){

@@ -1,6 +1,7 @@
 package com.joaquingabriel.camangeg.block1.p1.pcnubbies.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.R
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.steps.guideStep1
+import com.joaquingabriel.camangeg.block1.p1.pcnubbies.steps.guideStep2
+import com.joaquingabriel.camangeg.block1.p1.pcnubbies.steps.guideStep3
+import com.joaquingabriel.camangeg.block1.p1.pcnubbies.steps.guideStep4
+import com.joaquingabriel.camangeg.block1.p1.pcnubbies.steps.guideStep5
+import com.joaquingabriel.camangeg.block1.p1.pcnubbies.steps.guideStep6
+import com.joaquingabriel.camangeg.block1.p1.pcnubbies.steps.guideStep7
 import com.qamar.curvedbottomnaviagtion.CurvedBottomNavigation
 
 class GuideFragment : Fragment() {
@@ -34,22 +41,22 @@ class GuideFragment : Fragment() {
             replaceFragment(guideStep1())
         }
         step2.setOnClickListener{
-            replaceFragment(GuideFragment())
+            replaceFragment(guideStep2())
         }
         step3.setOnClickListener{
-            replaceFragment(GuideFragment())
+            replaceFragment(guideStep3())
         }
         step4.setOnClickListener{
-            replaceFragment(GuideFragment())
+            replaceFragment(guideStep4())
         }
         step5.setOnClickListener{
-            replaceFragment(GuideFragment())
+            replaceFragment(guideStep5())
         }
         step6.setOnClickListener{
-            replaceFragment(GuideFragment())
+            replaceFragment(guideStep6())
         }
         step7.setOnClickListener{
-            replaceFragment(GuideFragment())
+            replaceFragment(guideStep7())
         }
 
 
@@ -64,20 +71,31 @@ class GuideFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(R.layout.fragment_guide, container, false)
     }
 
-    private fun replaceFragment(fragment:Fragment){
-        requireActivity().supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragmentContainer, fragment)
-            .commit()
+    private fun replaceFragment(fragment: Fragment) {
+        try {
+            requireActivity().supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.fragmentContainer, fragment)
+                .commit()
+        } catch (e: Exception) {
+            // Log the exception
+            Log.e("GuideFragment", "Error replacing fragment", e)
+        }
     }
 
-    private fun addFragment(fragment:Fragment){
-        requireActivity().supportFragmentManager
-            .beginTransaction()
-            .add(R.id.fragmentContainer, fragment)
-            .commit()
+    private fun addFragment(fragment: Fragment) {
+        try {
+            requireActivity().supportFragmentManager
+                .beginTransaction()
+                .add(R.id.fragmentContainer, fragment)
+                .addToBackStack(null) // Consider adding this for better navigation
+                .commit()
+        } catch (e: Exception) {
+            // Log the exception
+            Log.e("GuideFragment", "Error adding fragment", e)
+        }
     }
 }
