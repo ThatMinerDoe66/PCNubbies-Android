@@ -34,192 +34,376 @@
                 ></TextView>
 
         </LinearLayout>
-        <!-- SearchBar -->
-        <LinearLayout
-            android:id="@+id/searchBar_background"
+
+        <!-- Shop title -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/shop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/purple150">
-
-            <!--Search Button (make clickable to shop)-->
-            <EditText
-                android:id="@+id/searchBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="text"
-                android:text="Search"
-                android:textColor="@color/black" />
+            android:layout_marginBottom="80dp"
+            android:textAlignment="center">
 
             <ImageView
-                android:id="@+id/search_button"
-                android:layout_width="5dp"
-                android:layout_height="40dp"
+                android:id="@+id/shop_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/btn_shop"
+                app:layout_constraintBottom_toBottomOf="@id/shop"
+                app:layout_constraintEnd_toEndOf="@id/shop"
+                app:layout_constraintStart_toStartOf="@id/shop"
+                app:layout_constraintTop_toTopOf="@+id/shop" />
+            <!--Add image in background later-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:contentDescription=""
-                tools:src="@drawable/search_alt_svgrepo_com" />
-        </LinearLayout>
+                android:text="Shop"
+                android:textColor="@color/white"
+                android:textSize="50dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/shop_img"
+                app:layout_constraintEnd_toEndOf="@id/shop_img"
+                app:layout_constraintStart_toStartOf="@id/shop_img"
+                app:layout_constraintTop_toTopOf="@id/shop_img">
 
-        <!--Buttons Area (1st layer)-->
+            </TextView>
 
-        <LinearLayout
-            android:id="@+id/buttonLayer1"
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--Buttons Area (Horizontal nested scsrollview)-->
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="10dp">
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="0.2"
-                android:orientation="vertical">
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cpu"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/purple_200"
+                    android:clickable="true"
+                    android:elevation="50dp">
+
+                    <ImageView
+                        android:id="@+id/cpuimg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/btn_shop"
+                        android:scaleType="fitXY"
+                        tools:layout_editor_absoluteX="0dp"
+                        tools:layout_editor_absoluteY="0dp" />
+                    <!--change image in background later-->
+
+                    <TextView
+                        android:layout_width="151dp"
+                        android:layout_height="wrap_content"
+                        android:text="CPU and Coolers"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:background="#6414D3"
+                        app:layout_constraintHorizontal_bias="0.457"
+                        app:layout_constraintVertical_bias="1.0"
+                        app:layout_constraintBottom_toBottomOf="@id/cpuimg"
+                        app:layout_constraintEnd_toEndOf="@id/cpuimg"
+                        app:layout_constraintStart_toStartOf="@id/cpuimg"
+                        app:layout_constraintTop_toTopOf="@id/cpuimg">
+
+                    </TextView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/motherboard"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/purple_200">
+
+                    <ImageView
+                        android:id="@+id/motherboardImg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/btn_shop"
+                        android:scaleType="fitXY"
+                        tools:layout_editor_absoluteX="0dp"
+                        tools:layout_editor_absoluteY="0dp" />
+                    <!--change image in background later-->
+
+                    <TextView
+                        android:layout_width="151dp"
+                        android:layout_height="wrap_content"
+                        android:text="Motherboard"
+                        android:background="#6414D3"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintVertical_bias="1.0"
+                        app:layout_constraintBottom_toBottomOf="@id/motherboardImg"
+                        app:layout_constraintEnd_toEndOf="@id/motherboardImg"
+                        app:layout_constraintStart_toStartOf="@id/motherboardImg"
+                        app:layout_constraintTop_toTopOf="@id/motherboardImg">
+
+                    </TextView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/gpu"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/purple_200">
+
+                    <ImageView
+                        android:id="@+id/gpuimg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/btn_shop"
+                        android:scaleType="fitXY"
+                        tools:layout_editor_absoluteX="0dp"
+                        tools:layout_editor_absoluteY="0dp" />
+                    <!--change image in background later-->
+
+                    <TextView
+                        android:layout_width="151dp"
+                        android:layout_height="wrap_content"
+                        android:text="GPU"
+                        android:background="#6414D3"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/gpuimg"
+                        app:layout_constraintEnd_toEndOf="@id/gpuimg"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@id/gpuimg"
+                        app:layout_constraintTop_toTopOf="@id/gpuimg"
+                        app:layout_constraintVertical_bias="1.0">
+
+                    </TextView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/memory"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/purple_200">
+
+                    <ImageView
+                        android:id="@+id/memoryimg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/btn_shop"
+                        android:scaleType="fitXY"
+                        tools:layout_editor_absoluteX="0dp"
+                        tools:layout_editor_absoluteY="0dp" />
+                    <!--change image in background later-->
+
+                    <TextView
+                        android:layout_width="151dp"
+                        android:layout_height="wrap_content"
+                        android:background="#6414D3"
+                        android:text="Memory"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/memoryimg"
+                        app:layout_constraintEnd_toEndOf="@id/memoryimg"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@id/memoryimg"
+                        app:layout_constraintTop_toTopOf="@id/memoryimg"
+                        app:layout_constraintVertical_bias="1.0">
+
+                    </TextView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/storage"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/purple_200">
+
+                    <ImageView
+                        android:id="@+id/storageimg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/btn_shop"
+                        android:scaleType="fitXY"
+                        tools:layout_editor_absoluteX="0dp"
+                        tools:layout_editor_absoluteY="0dp" />
+                    <!--change image in background later-->
+
+                    <TextView
+                        android:layout_width="151dp"
+                        android:layout_height="wrap_content"
+                        android:background="#6414D3"
+                        android:text="Storage"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/storageimg"
+                        app:layout_constraintEnd_toEndOf="@id/storageimg"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@id/storageimg"
+                        app:layout_constraintTop_toTopOf="@id/storageimg"
+                        app:layout_constraintVertical_bias="1.0">
+
+                    </TextView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/psu"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/purple_200">
+
+                    <ImageView
+                        android:id="@+id/psuimg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/btn_shop"
+                        android:scaleType="fitXY"
+                        tools:layout_editor_absoluteX="0dp"
+                        tools:layout_editor_absoluteY="0dp" />
+                    <!--change image in background later-->
+
+                    <TextView
+                        android:layout_width="151dp"
+                        android:layout_height="wrap_content"
+                        android:background="#6414D3"
+                        android:text="Power Supply Unit"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/psuimg"
+                        app:layout_constraintEnd_toEndOf="@id/psuimg"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@id/psuimg"
+                        app:layout_constraintTop_toTopOf="@id/psuimg"
+                        app:layout_constraintVertical_bias="1.0">
+
+                    </TextView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/pccase"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/purple_200">
+
+                    <ImageView
+                        android:id="@+id/pccaseimg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/btn_shop"
+                        android:scaleType="fitXY"
+                        tools:layout_editor_absoluteX="0dp"
+                        tools:layout_editor_absoluteY="0dp" />
+                    <!--change image in background later-->
+
+                    <TextView
+                        android:layout_width="151dp"
+                        android:layout_height="wrap_content"
+                        android:background="#6414D3"
+                        android:text="PC Case"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/pccaseimg"
+                        app:layout_constraintEnd_toEndOf="@id/pccaseimg"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@id/pccaseimg"
+                        app:layout_constraintTop_toTopOf="@id/pccaseimg"
+                        app:layout_constraintVertical_bias="1.0">
+
+                    </TextView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/extras"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/purple_200">
+
+                    <ImageView
+                        android:id="@+id/extrasimg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/btn_shop"
+                        android:scaleType="fitXY"
+                        tools:layout_editor_absoluteX="0dp"
+                        tools:layout_editor_absoluteY="0dp" />
+                    <!--change image in background later-->
+
+                    <TextView
+                        android:layout_width="151dp"
+                        android:layout_height="wrap_content"
+                        android:background="#6414D3"
+                        android:text="Extras"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/extrasimg"
+                        app:layout_constraintEnd_toEndOf="@id/extrasimg"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@id/extrasimg"
+                        app:layout_constraintTop_toTopOf="@id/extrasimg"
+                        app:layout_constraintVertical_bias="1.0">
+
+                    </TextView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="400dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="5dp"
-                android:background="@color/purple_200">
+        </androidx.core.widget.NestedScrollView>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:text="Featured"
-                    android:textColor="@color/white"
-                    android:textSize="30dp"
-                    android:textStyle="bold"
-                    tools:layout_editor_absoluteX="5dp"
-                    tools:layout_editor_absoluteY="5dp"></TextView>
-                <!--Add image in background later-->
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </LinearLayout>
-
-        <!--Buttons Area (1st layer)-->
         <LinearLayout
             android:id="@+id/buttonLayer2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="0.2"
-                android:orientation="vertical"></LinearLayout>
-
-            <!--Shop-->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="193dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:background="@color/purple_200">
-
-
-                <ImageView
-                    android:id="@+id/topbuild"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="0dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_margin="5dp"
-                    android:text="Top Builds"
-                    android:textColor="@color/white"
-                    android:textSize="30dp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/topbuild">
-
-                </TextView>
-                <!--Add image in background later-->
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <!--Shop-->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="193dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:background="@color/purple_200">
-
-                <ImageView
-                    android:id="@+id/guides"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/btn_guide"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="0dp" />
-
-                <TextView
-                    android:layout_width="184dp"
-                    android:layout_height="40dp"
-                    android:layout_margin="5dp"
-                    android:text="Guides"
-                    android:textColor="@color/white"
-                    android:textSize="30dp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"></TextView>
-                <!--Add image in background later-->
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_height="wrap_content">
 
         </LinearLayout>
 
 
         <!--Buttons Area (1st layer)-->
-        <LinearLayout
-            android:id="@+id/buttonLayer3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="0.2"
-                android:orientation="vertical"></LinearLayout>
-
-            <!--Shop-->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="393dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:background="@color/purple_200">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp"
-                    android:text="Shop"
-                    android:textColor="@color/white"
-                    android:textSize="30dp"
-                    android:textStyle="bold"></TextView>
-                <!--Add image in background later-->
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </LinearLayout>
 
 
     </LinearLayout>
