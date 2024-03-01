@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.fragments.GuideFragment
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.fragments.HomeFragment
-import com.joaquingabriel.camangeg.block1.p1.pcnubbies.fragments.ProfileFragment
+import com.joaquingabriel.camangeg.block1.p1.pcnubbies.fragments.CartFragment
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.fragments.ShopFragment
 import com.qamar.curvedbottomnaviagtion.CurvedBottomNavigation
 
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                     replaceFragment(GuideFragment())
                 }
                 3 ->{
-                    replaceFragment(ProfileFragment())
+                    replaceFragment(CartFragment())
                 }
             }
         }
