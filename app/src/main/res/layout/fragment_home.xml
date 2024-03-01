@@ -143,7 +143,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_margin="5dp"
-                    android:text="Top Builds"
+                    android:text=" "
                     android:textColor="@color/white"
                     android:textSize="30dp"
                     android:textStyle="bold"
@@ -226,7 +226,11 @@
                     android:text="Shop"
                     android:textColor="@color/white"
                     android:textSize="30dp"
-                    android:textStyle="bold"></TextView>
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></TextView>
                 <!--Add image in background later-->
             </androidx.constraintlayout.widget.ConstraintLayout>
 

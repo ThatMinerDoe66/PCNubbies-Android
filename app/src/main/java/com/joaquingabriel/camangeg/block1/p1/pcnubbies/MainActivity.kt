@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             CurvedBottomNavigation.Model(2, "Guide", R.drawable.baseline_guide_button)
         )
         bottomNavigation.add(
-            CurvedBottomNavigation.Model(3, "Profile", R.drawable.baseline_profile_button)
+            CurvedBottomNavigation.Model(3, "Cart", R.drawable.baseline_profile_button)
         )
 
         bottomNavigation.setOnClickMenuListener {
