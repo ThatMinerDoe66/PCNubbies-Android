@@ -4,12 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".cpuproducts"
-    android:background="@color/yellow_orange">
+    tools:context=".extraproducts">
 
     <!-- Product are -->
     <GridLayout
-        android:id="@+id/cpuproductlist"
+        android:id="@+id/extrasproductlist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:rowCount="5"
@@ -18,58 +17,27 @@
         android:layout_marginRight="15dp">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cpu1"
+            android:id="@+id/extras1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="@color/whitish_purple"
             app:cardElevation="20dp"
             app:cardCornerRadius="15dp"
             app:cardUseCompatPadding="true">
-            
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-                
+
                 <ImageView
-                    android:id="@+id/cpu1img"
+                    android:id="@+id/extras1img"
                     android:layout_width="140dp"
                     android:layout_height="100dp"
                     android:layout_marginBottom="20dp"/>
 
                 <TextView
-                    android:id="@+id/cpu1txt"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@color/purple_200"
-                    android:textAlignment="center"
-                    android:textColor="@color/black" />
-                
-            </LinearLayout>
-            
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cpu2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/whitish_purple"
-            app:cardElevation="20dp"
-            app:cardCornerRadius="15dp"
-            app:cardUseCompatPadding="true">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:id="@+id/cpu2img"
-                    android:layout_width="140dp"
-                    android:layout_height="100dp" android:layout_marginBottom="20dp"/>
-
-                <TextView
-                    android:id="@+id/cpu2txt"
+                    android:id="@+id/extras1txt"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:background="@color/purple_200"
@@ -81,7 +49,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cpu3"
+            android:id="@+id/extras2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="@color/whitish_purple"
@@ -95,13 +63,45 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/cpu3img"
+                    android:id="@+id/extras2img"
                     android:layout_width="140dp"
                     android:layout_height="100dp"
                     android:layout_marginBottom="20dp"/>
 
                 <TextView
-                    android:id="@+id/cpu3txt"
+                    android:id="@+id/extras2txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/purple_200"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/extras3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/whitish_purple"
+            app:cardElevation="20dp"
+            app:cardCornerRadius="15dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/extras3img"
+                    android:layout_width="140dp"
+                    android:layout_height="100dp"
+                    android:layout_marginBottom="20dp"/>
+
+                <TextView
+                    android:id="@+id/extras3txt"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:background="@color/purple_200"

@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".cpuproducts">
+    tools:context=".motherboardproducts">
 
     <!-- Product are -->
     <GridLayout
-        android:id="@+id/productlist"
+        android:id="@+id/motherboardproductlist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:rowCount="5"
