@@ -19,7 +19,8 @@
             android:layout_height="wrap_content"
             android:background="@color/purple_200"
             android:orientation="horizontal"
-            android:padding="15dp">
+            android:padding="15dp"
+            android:layout_marginBottom="10dp">
 
             <TextView
                 android:id="@+id/homeicon"
@@ -30,42 +31,9 @@
                 android:textColor="@color/white"
                 android:textSize="30dp"
                 android:textStyle="bold"
-
                 ></TextView>
 
         </LinearLayout>
-        <!-- SearchBar -->
-        <LinearLayout
-            android:id="@+id/searchBar_background"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/purple150">
-
-            <!--Search Button (make clickable to shop)-->
-            <EditText
-                android:id="@+id/searchBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="text"
-                android:text="Search"
-                android:textColor="@color/black" />
-
-            <ImageView
-                android:id="@+id/search_button"
-                android:layout_width="5dp"
-                android:layout_height="40dp"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:contentDescription=""
-                tools:src="@drawable/search_alt_svgrepo_com" />
-        </LinearLayout>
-
-        <!--Buttons Area (1st layer)-->
 
         <LinearLayout
             android:id="@+id/welcometab"
@@ -86,18 +54,19 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="400dp"
                 android:layout_height="80dp"
-                android:layout_marginTop="-10dp"
+                android:layout_marginTop="-1dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginEnd="5dp"
                 android:background="@color/purple_200">
 
                 <TextView
+                    android:id="@+id/text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:text="Welcome to the PC Nubbies Dashboard"
                     android:textColor="@color/white"
-                    android:textSize="30dp"
+                    android:textSize="28dp"
                     android:textStyle="bold"
                     tools:layout_editor_absoluteX="5dp"
                     tools:layout_editor_absoluteY="5dp">
@@ -226,7 +195,9 @@
                     android:text="Shop"
                     android:textColor="@color/white"
                     android:textSize="30dp"
-                    android:textStyle="bold"></TextView>
+                    android:textStyle="bold">
+
+                </TextView>
                 <!--Add image in background later-->
             </androidx.constraintlayout.widget.ConstraintLayout>
 
