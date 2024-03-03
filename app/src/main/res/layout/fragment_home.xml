@@ -33,7 +33,7 @@
 
                 ></TextView>
 
-        </LinearLayout>*
+        </LinearLayout>
         <!-- SearchBar -->
         <LinearLayout
             android:id="@+id/searchBar_background"
@@ -122,6 +122,38 @@
                 android:layout_weight="0.2"
                 android:orientation="vertical"></LinearLayout>
 
+            <!--Shop-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="193dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/purple_200">
+
+
+                <ImageView
+                    android:id="@+id/topbuild"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/btn_topbuild"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="0dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dp"
+                    android:text="Top Builds"
+                    android:textColor="@color/white"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/topbuild">
+
+                </TextView>
+                <!--Add image in background later-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <!--Shop-->
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -194,26 +226,11 @@
                     android:text="Shop"
                     android:textColor="@color/white"
                     android:textSize="30dp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"></TextView>
+                    android:textStyle="bold"></TextView>
                 <!--Add image in background later-->
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/productlist"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
 
 
     </LinearLayout>
