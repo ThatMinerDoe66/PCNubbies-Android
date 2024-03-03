@@ -34,7 +34,7 @@ class motherboardproducts : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_motherboardproducts, container, false)
+        return inflater.inflate(R.layout.frag_motherboardproducts, container, false)
     }
 
     companion object {
