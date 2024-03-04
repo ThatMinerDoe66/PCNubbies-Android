@@ -34,7 +34,7 @@ class extraproducts : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_extraproducts, container, false)
+        return inflater.inflate(R.layout.frag_extraproducts, container, false)
     }
 
     companion object {

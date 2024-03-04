@@ -24,7 +24,7 @@
                 android:id="@+id/itemImg"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src=""
+                android:src="@drawable/mobo"
                 android:layout_marginStart="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

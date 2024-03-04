@@ -34,7 +34,7 @@ class psuproducts : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_psuproducts, container, false)
+        return inflater.inflate(R.layout.frag_psuproducts, container, false)
     }
 
     companion object {

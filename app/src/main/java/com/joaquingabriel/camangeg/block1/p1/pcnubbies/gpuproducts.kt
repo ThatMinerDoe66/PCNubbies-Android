@@ -34,7 +34,7 @@ class gpuproducts : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gpuproducts, container, false)
+        return inflater.inflate(R.layout.frag_gpuproducts, container, false)
     }
 
     companion object {

@@ -1,5 +1,6 @@
 package com.joaquingabriel.camangeg.block1.p1.pcnubbies.fragments
 
+import ProductResponse
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
