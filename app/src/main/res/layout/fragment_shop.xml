@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -30,9 +30,7 @@
                 android:layout_gravity="center"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                android:textStyle="bold">
-
-            </TextView>
+                android:textStyle="bold"/>
 
         </LinearLayout>
 
@@ -41,7 +39,7 @@
             android:id="@+id/shop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="80dp"
+            android:layout_marginBottom="50dp"
             android:textAlignment="center">
 
             <ImageView
@@ -75,10 +73,10 @@
 
 
         <!--Buttons Area (Horizontal nested scsrollview)-->
-        <androidx.core.widget.NestedScrollView
+        <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="50dp"
             android:layout_marginBottom="10dp">
 
             <LinearLayout
@@ -409,7 +407,7 @@
                             android:layout_width="151dp"
                             android:layout_height="wrap_content"
                             android:background="#6414D3"
-                            android:text="Extras"
+                            android:text="Peripherals"
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             android:textSize="15sp"
@@ -423,7 +421,7 @@
 
             </LinearLayout>
 
-        </androidx.core.widget.NestedScrollView>
+        </HorizontalScrollView>
 
 
         <LinearLayout
@@ -435,4 +433,4 @@
 
     </LinearLayout>
 
-</FrameLayout>
+</ScrollView>
