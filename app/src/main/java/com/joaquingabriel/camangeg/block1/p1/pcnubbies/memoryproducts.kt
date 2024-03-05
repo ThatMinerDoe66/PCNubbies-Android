@@ -34,7 +34,7 @@ class memoryproducts : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_memoryproducts, container, false)
+        return inflater.inflate(R.layout.frag_memoryproducts, container, false)
     }
 
     companion object {

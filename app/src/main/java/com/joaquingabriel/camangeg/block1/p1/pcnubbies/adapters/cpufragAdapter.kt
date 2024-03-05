@@ -1,6 +1,6 @@
 package com.joaquingabriel.camangeg.block1.p1.pcnubbies.adapters
 
-import ProductResponse
+import Product
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,8 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.R
 
-
-class cpufragAdapter(private var frag_cpuproducts: MutableList<ProductResponse>) :
+class cpufragAdapter(private var frag_cpuproducts: MutableList<Product>) :
     RecyclerView.Adapter<cpufragAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -24,10 +23,7 @@ class cpufragAdapter(private var frag_cpuproducts: MutableList<ProductResponse>)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val productBundle = frag_cpuproducts[position]
-        // Assuming you want to display the title and price of the first product in the list
-        // If you want to display properties of all products, you'll need to adjust this logic
-        val product = productBundle.data.firstOrNull() ?: return
+        val product = frag_cpuproducts[position]
         holder.Ad_title.text = product.title
         holder.Ad_price.text = product.price
         // Assuming product.product_images is a list of image URLs or drawable resource names
@@ -38,7 +34,7 @@ class cpufragAdapter(private var frag_cpuproducts: MutableList<ProductResponse>)
         // Glide.with(holder.itemView.context).load(imageUrl).into(holder.Ad_image)
     }
 
-    fun updateProducts(newProducts: List<ProductResponse>) {
+    fun updateProducts(newProducts: List<Product>) {
         frag_cpuproducts.clear()
         frag_cpuproducts.addAll(newProducts)
         notifyDataSetChanged()

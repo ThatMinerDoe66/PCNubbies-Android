@@ -1,5 +1,6 @@
 package com.joaquingabriel.camangeg.block1.p1.pcnubbies.api
 
+import Product
 import ProductResponse
 import android.content.SharedPreferences
 import android.util.Log
@@ -21,28 +22,29 @@ object NubbiesClient {
         sharedPreferences = kek
     }
 
-    suspend fun fetchProducts(title: String?, price: Double?): List<ProductResponse>? {
+    suspend fun fetchProducts(title: String?, price: Double?): List<Product>? {
         return withContext(Dispatchers.IO) {
             try {
                 val response = NubbiesClient.instance.getProductList(title, price)
                 if (response.isSuccessful) {
                     val productResponse = response.body()
                     if (productResponse != null) {
-                        // Assuming productResponse.data is the correct property to return
-                        // This should return a List<ProductResponse>
-                        listOf(productResponse) // Wrap the productResponse in a list
+                        // Extract the list of Product objects from the ProductResponse object
+                        productResponse.data
                     } else {
-                        emptyList<ProductResponse>()
+                        emptyList<Product>()
                     }
                 } else {
-                    emptyList<ProductResponse>()
+                    emptyList<Product>()
                 }
             } catch (e: Exception) {
                 Log.e("NubbiesClient", "Error fetching products", e)
-                emptyList<ProductResponse>()
+                emptyList<Product>()
             }
         }
     }
+
+
 
 
     private fun createInstance(): NubbiesAPI {
