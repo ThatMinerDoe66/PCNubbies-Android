@@ -201,7 +201,8 @@
                     android:text="Shop"
                     android:textColor="@color/white"
                     android:textSize="30dp"
-                    android:textStyle="bold"></TextView>
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints"></TextView>
                 <!--Add image in background later-->
             </androidx.constraintlayout.widget.ConstraintLayout>
 
