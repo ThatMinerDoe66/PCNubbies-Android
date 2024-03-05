@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/purple150"
-            />
+            android:orientation="horizontal" />
 
         <!--Buttons Area (1st layer)-->
         <LinearLayout
@@ -124,15 +124,18 @@
                 android:layout_marginEnd="20dp"
                 android:background="@color/purple_200"
                 >
+
                 <TextView
+                    android:id="@+id/cartButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Featured"
                     android:layout_margin="5dp"
-                    android:textSize="30dp"
+                    android:text="Cart"
                     android:textColor="@color/white"
-                    android:textStyle="bold">
-                </TextView>
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    tools:layout_editor_absoluteX="5dp"
+                    tools:layout_editor_absoluteY="5dp"></TextView>
                 <!--Add image in background later-->
             </androidx.constraintlayout.widget.ConstraintLayout>
 

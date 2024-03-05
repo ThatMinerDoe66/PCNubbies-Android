@@ -38,7 +38,8 @@
             android:id="@+id/searchBar_background"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/purple150"/>
+            android:background="@color/purple150"
+            android:orientation="horizontal" />
 
         <!--Buttons Area (1st layer)-->
 
@@ -206,6 +207,17 @@
 
         </LinearLayout>
 
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/productlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </LinearLayout>
 </ScrollView>
