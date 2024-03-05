@@ -25,7 +25,7 @@
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="HOME"
+                android:text="PROFILE"
                 android:textSize="30dp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
@@ -41,32 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/purple150"
-            >
-
-            <EditText
-                android:id="@+id/searchBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:ems="10"
-                android:inputType="text"
-                android:text="Search"
-                android:textColor="@color/black"
-                />
-            <!--Search Button (make clickable to shop)-->
-            <ImageView
-                android:id="@+id/search_button"
-                android:layout_width="5dp"
-                android:layout_height="40dp"
-                android:layout_weight="1"
-                android:layout_margin="5dp"
-                tools:src="@drawable/search_alt_svgrepo_com"
-                android:clickable="true"
-                android:contentDescription=""
-                />
-        </LinearLayout>
+            />
 
         <!--Buttons Area (1st layer)-->
         <LinearLayout
