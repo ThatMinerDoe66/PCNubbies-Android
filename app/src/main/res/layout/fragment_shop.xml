@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/veryDark_purple"
     tools:context=".fragments.HomeFragment">
 
     <!-- TitleBar -->
@@ -45,9 +45,9 @@
             <ImageView
                 android:id="@+id/shop_img"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="150dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/btn_shop"
+                android:src="@drawable/shop_aisle"
                 app:layout_constraintBottom_toBottomOf="@id/shop"
                 app:layout_constraintEnd_toEndOf="@id/shop"
                 app:layout_constraintStart_toStartOf="@id/shop"
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:text="Shop"
-                android:textColor="@color/white"
+                android:textColor="@color/whitish_yellow"
                 android:textSize="50sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/shop_img"
@@ -76,6 +76,8 @@
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:scrollbarStyle="insideInset"
+            android:fadeScrollbars="true"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="10dp">
 
@@ -91,6 +93,7 @@
                     android:clickable="true"
                     android:elevation="50dp"
                     app:cardCornerRadius="15dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
                     android:background="@color/purple_200">
 
@@ -103,7 +106,7 @@
                             android:id="@+id/cpuimg"
                             android:layout_width="match_parent"
                             android:layout_height="110dp"
-                            android:src="@drawable/cpu"
+                            android:src="@drawable/catcpu"
                             android:scaleType="fitXY"
                             tools:layout_editor_absoluteX="0dp"
                             tools:layout_editor_absoluteY="0dp" />
@@ -113,11 +116,11 @@
                             android:layout_width="151dp"
                             android:layout_height="wrap_content"
                             android:text="CPU and Coolers"
-                            android:textColor="@color/white"
+                            android:textColor="@color/whitish_yellow"
                             android:textSize="15sp"
                             android:textStyle="bold"
                             android:textAlignment="center"
-                            android:background="#6414D3">
+                            android:background="@color/dark_purple">
 
                         </TextView>
 
@@ -146,7 +149,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="110dp"
                             android:scaleType="fitXY"
-                            android:src="@drawable/motherboard"
+                            android:src="@drawable/catmobo"
                             tools:layout_editor_absoluteX="0dp"
                             tools:layout_editor_absoluteY="0dp" />
                         <!--change image in background later-->
@@ -155,9 +158,9 @@
                             android:layout_width="151dp"
                             android:layout_height="wrap_content"
                             android:text="Motherboard"
-                            android:background="#6414D3"
+                            android:background="@color/dark_purple"
                             android:textAlignment="center"
-                            android:textColor="@color/white"
+                            android:textColor="@color/whitish_yellow"
                             android:textSize="15sp"
                             android:textStyle="bold">
 
@@ -188,7 +191,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="110dp"
                             android:scaleType="fitXY"
-                            android:src="@drawable/gpu"
+                            android:src="@drawable/catgpu"
                             tools:layout_editor_absoluteX="-37dp"
                             tools:layout_editor_absoluteY="-16dp" />
                             <!--change image in background later-->
@@ -197,9 +200,9 @@
                             android:layout_width="151dp"
                             android:layout_height="wrap_content"
                             android:text="GPU"
-                            android:background="#6414D3"
+                            android:background="@color/dark_purple"
                             android:textAlignment="center"
-                            android:textColor="@color/white"
+                            android:textColor="@color/whitish_yellow"
                             android:textSize="15sp"
                             android:textStyle="bold">
 
@@ -229,7 +232,7 @@
                             android:id="@+id/memoryimg"
                             android:layout_width="match_parent"
                             android:layout_height="110dp"
-                            android:src="@drawable/btn_shop"
+                            android:src="@drawable/catmemory"
                             android:scaleType="fitXY"
                             tools:layout_editor_absoluteX="0dp"
                             tools:layout_editor_absoluteY="0dp" />
@@ -238,10 +241,10 @@
                         <TextView
                             android:layout_width="151dp"
                             android:layout_height="wrap_content"
-                            android:background="#6414D3"
+                            android:background="@color/dark_purple"
                             android:text="Memory"
                             android:textAlignment="center"
-                            android:textColor="@color/white"
+                            android:textColor="@color/whitish_yellow"
                             android:textSize="15sp"
                             android:textStyle="bold">
 
@@ -271,7 +274,7 @@
                             android:id="@+id/storageimg"
                             android:layout_width="match_parent"
                             android:layout_height="110dp"
-                            android:src="@drawable/ssd"
+                            android:src="@drawable/catstorage"
                             android:scaleType="fitXY"
                             tools:layout_editor_absoluteX="0dp"
                             tools:layout_editor_absoluteY="0dp" />
@@ -280,10 +283,10 @@
                         <TextView
                             android:layout_width="151dp"
                             android:layout_height="wrap_content"
-                            android:background="#6414D3"
+                            android:background="@color/dark_purple"
                             android:text="Storage"
                             android:textAlignment="center"
-                            android:textColor="@color/white"
+                            android:textColor="@color/whitish_yellow"
                             android:textSize="15sp"
                             android:textStyle="bold">
 
@@ -313,7 +316,7 @@
                             android:id="@+id/psuimg"
                             android:layout_width="match_parent"
                             android:layout_height="110dp"
-                            android:src="@drawable/psu"
+                            android:src="@drawable/catpsu"
                             android:scaleType="fitXY"
                             tools:layout_editor_absoluteX="0dp"
                             tools:layout_editor_absoluteY="0dp" />
@@ -322,10 +325,10 @@
                         <TextView
                             android:layout_width="151dp"
                             android:layout_height="wrap_content"
-                            android:background="#6414D3"
+                            android:background="@color/dark_purple"
                             android:text="Power Supply Unit"
                             android:textAlignment="center"
-                            android:textColor="@color/white"
+                            android:textColor="@color/whitish_yellow"
                             android:textSize="15sp"
                             android:textStyle="bold">
 
@@ -355,7 +358,7 @@
                             android:id="@+id/pccaseimg"
                             android:layout_width="match_parent"
                             android:layout_height="110dp"
-                            android:src="@drawable/btn_shop"
+                            android:src="@drawable/catpccase"
                             android:scaleType="fitXY"
                             tools:layout_editor_absoluteX="0dp"
                             tools:layout_editor_absoluteY="0dp" />
@@ -364,10 +367,10 @@
                         <TextView
                             android:layout_width="151dp"
                             android:layout_height="wrap_content"
-                            android:background="#6414D3"
+                            android:background="@color/dark_purple"
                             android:text="PC Case"
                             android:textAlignment="center"
-                            android:textColor="@color/white"
+                            android:textColor="@color/whitish_yellow"
                             android:textSize="15sp"
                             android:textStyle="bold">
 
@@ -378,7 +381,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/extras"
+                    android:id="@+id/peripherals"
                     android:layout_width="150dp"
                     android:layout_height="130dp"
                     android:clickable="true"
@@ -394,10 +397,10 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/extrasimg"
+                            android:id="@+id/peripheralsimg"
                             android:layout_width="match_parent"
                             android:layout_height="110dp"
-                            android:src="@drawable/btn_shop"
+                            android:src="@drawable/catperipherals"
                             android:scaleType="fitXY"
                             tools:layout_editor_absoluteX="0dp"
                             tools:layout_editor_absoluteY="0dp" />
@@ -406,10 +409,10 @@
                         <TextView
                             android:layout_width="151dp"
                             android:layout_height="wrap_content"
-                            android:background="#6414D3"
+                            android:background="@color/dark_purple"
                             android:text="Peripherals"
                             android:textAlignment="center"
-                            android:textColor="@color/white"
+                            android:textColor="@color/whitish_yellow"
                             android:textSize="15sp"
                             android:textStyle="bold">
 
