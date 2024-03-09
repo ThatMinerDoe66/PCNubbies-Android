@@ -55,6 +55,19 @@
                 app:layout_constraintStart_toEndOf="@+id/itemImg"
                 app:layout_constraintTop_toBottomOf="@+id/itemBrand"/>
 
+            <TextView
+                android:id="@+id/itemPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price here"
+                android:textSize="16sp"
+                android:textColor="@color/whitish_yellow"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/itemImg"
+                app:layout_constraintTop_toBottomOf="@+id/itemUnit"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

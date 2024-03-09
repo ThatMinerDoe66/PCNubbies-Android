@@ -1,6 +1,7 @@
 package com.joaquingabriel.camangeg.block1.p1.pcnubbies.api
 
 import ProductResponse
+import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.CartResponse
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.DefaultResponse
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.LoginResponse
 
@@ -11,15 +12,22 @@ import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.POST
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface NubbiesAPI {
-    //Cart
+    //Product
     @GET("products")
     suspend fun getProductList(
         @Query("title") title: String?,
         @Query("price") price: Double?
     ): Response<ProductResponse>
+
+    //Cart
+    @GET("carts")
+    suspend fun getCartItems(): Response<CartResponse>
+
+
 
     //Register
     @FormUrlEncoded

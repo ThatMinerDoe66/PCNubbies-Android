@@ -2,9 +2,11 @@ package com.joaquingabriel.camangeg.block1.p1.pcnubbies.api
 
 import Product
 import ProductResponse
+import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.CartProduct
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
@@ -15,12 +17,38 @@ import java.util.concurrent.TimeUnit
 
 object NubbiesClient {
     private lateinit var sharedPreferences: SharedPreferences
+    internal lateinit var instance: NubbiesAPI
 
-    val instance: NubbiesAPI by lazy { createInstance() }
-
-    fun setSharedPreferences(kek:SharedPreferences){
-        sharedPreferences = kek
+    fun setSharedPreferences(context: Context) {
+        // Assuming you have a way to get SharedPreferences from the context
+        sharedPreferences = context.getSharedPreferences("YourSharedPrefsName", Context.MODE_PRIVATE)
+        // Initialize the instance here with the context
+        instance = createInstance(context)
     }
+
+
+    suspend fun fetchCartProducts(): List<CartProduct> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = NubbiesClient.instance.getCartItems()
+
+                if (response.isSuccessful) {
+                    val cartResponse = response.body()
+                    cartResponse?.data?.products ?: emptyList()
+                } else {
+                    Log.e("NubbiesClient", "Error fetching cart products: ${response.errorBody()?.string()}")
+                    emptyList()
+                }
+            } catch (e: Exception) {
+                Log.e("NubbiesClient", "Error fetching cart products", e)
+                emptyList()
+            }
+        }
+    }
+
+
+
+
 
     suspend fun fetchProducts(title: String?, price: Double?): List<Product>? {
         return withContext(Dispatchers.IO) {
@@ -44,29 +72,25 @@ object NubbiesClient {
         }
     }
 
-
-
-
-    private fun createInstance(): NubbiesAPI {
+    private fun createInstance(context: Context): NubbiesAPI {
         val okHttpClient = OkHttpClient.Builder()
-            .addInterceptor { chain ->
-                val request = chain.request().newBuilder()
-                    .build()
-                chain.proceed(request)
-            }
+            .addInterceptor(AuthInterceptor(context)) // Use the AuthInterceptor here
             .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
-            .connectTimeout(30, TimeUnit.SECONDS)
-            .readTimeout(30, TimeUnit.SECONDS)
+            .connectTimeout(60, TimeUnit.SECONDS)
+            .readTimeout(60, TimeUnit.SECONDS)
             .build()
+
 
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(CoroutineCallAdapterFactory()) // Add this line
+            //.addCallAdapterFactory(CoroutineCallAdapterFactory()) // Add this line
             .client(okHttpClient)
             .build()
 
+        //val instance: NubbiesAPI = retrofit.create(NubbiesAPI::class.java)
+
         return retrofit.create(NubbiesAPI::class.java)
     }
-    private const val BASE_URL = "https://pcnubbies2.pcnubbies.tech/api/"
+    private const val BASE_URL = "https://pcnubbies.pcnubbies.tech/api/"
 }

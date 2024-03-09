@@ -14,6 +14,7 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Spinner
 import android.widget.Toast
+import com.joaquingabriel.camangeg.block1.p1.pcnubbies.api.AuthPrefs
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.api.NubbiesClient
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.DefaultResponse
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.LoginResponse
@@ -35,6 +36,9 @@ class Login : AppCompatActivity() {
 
         val loginButton = findViewById<Button>(R.id.login_button)
         val registerButton = findViewById<Button>(R.id.toregister_button)
+
+        // Initialize the NubbiesClient here
+        NubbiesClient.setSharedPreferences(this)
 
 //To Register
         registerButton.setOnClickListener{
@@ -67,6 +71,9 @@ class Login : AppCompatActivity() {
                             response: Response<LoginResponse>
                         ) {
                             if (response.isSuccessful && response.body() != null){
+
+                                AuthPrefs.storeApiToken(this@Login, response.body()!!.access_token) //grabs API token
+
                                 Toast.makeText(applicationContext, response.body()!!.message, Toast.LENGTH_LONG).show()
                                 val intent = Intent(this@Login, MainActivity::class.java)//make this into a login
                                 startActivity(intent)
