@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple150"
+    android:background="@color/white"
     tools:context=".fragments.HomeFragment">
 
     <!-- TitleBar -->
@@ -17,7 +17,7 @@
             android:id="@+id/titleBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/purple_200"
+            android:background="@color/veryDark_purple"
             android:orientation="horizontal"
             android:padding="15dp">
 
@@ -65,12 +65,12 @@
                 android:layout_marginTop="-10dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="10dp"
-                android:background="@color/purple_200">
+                android:background="@color/veryDark_purple">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="5dp"
+                    android:layout_margin="10dp"
                     android:text="Welcome to the PC Nubbies Dashboard"
                     android:textColor="@color/white"
                     android:textSize="25dp"
@@ -103,7 +103,7 @@
                 android:layout_height="120dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:background="@color/purple_200">
+                android:background="@color/veryDark_purple">
 
 
                 <ImageView
