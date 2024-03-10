@@ -169,7 +169,7 @@
                     android:layout_width="100dp"
                     android:layout_height="45dp"
                     android:layout_margin="5dp"
-                    android:text="Shop"
+                    android:text="Shops"
                     android:textColor="@color/white"
                     android:textSize="30dp"
                     android:textStyle="bold"
