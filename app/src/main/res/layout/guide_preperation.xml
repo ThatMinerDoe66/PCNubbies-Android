@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/prepbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_purple"
+        android:orientation="vertical"
+        android:layout_marginTop="0dp">
+        <TextView
+        android:id="@+id/homeicon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PREPERATION"
+        android:fontFamily="@font/inter_med"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        >
+
+        </TextView>
+    </LinearLayout>
+
+        <ImageView
+            android:id="@+id/guide_prep"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/prep"
+            android:layout_marginTop="15dp">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/guide_preperation"
+            android:layout_width="306dp"
+            android:layout_height="555dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="150dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginBottom="3dp"
+            android:padding="0dp"
+            android:text="1.Define Your Needs and Budget:Determine your PC usage and set a budget.
+
+            2.Research Components: Look into CPU, GPU, motherboard, RAM, storage, power supply, and case options.
+
+            3.Compatibility Check: Ensure all components are compatible with each other."
+            android:textSize="30dp" />
+    </LinearLayout>
+</ScrollView>
