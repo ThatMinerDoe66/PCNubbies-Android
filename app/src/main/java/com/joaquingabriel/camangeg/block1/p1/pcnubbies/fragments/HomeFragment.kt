@@ -50,6 +50,8 @@ class HomeFragment : Fragment(R.layout.fragment_home, ) {
             replaceFragment(ShopFragment())
         }
 
+
+        //Code for Items in Shop
         recyclerView = view.findViewById(R.id.productlist)
         recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
 
@@ -62,7 +64,7 @@ class HomeFragment : Fragment(R.layout.fragment_home, ) {
 
 
     }
-
+    //Code for Items in shop
     private fun fetchProductList() {
         lifecycleScope.launch {
             val productList = NubbiesClient.fetchProducts(title = null, price = null)
