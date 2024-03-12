@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@color/purple_200"
+            android:background="@color/dark_purple"
             android:padding="15dp">
 
             <ImageView
@@ -35,14 +35,13 @@
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="GUIDES"
-                android:textSize="30dp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
+                android:text="PREPERATION"
                 android:textAlignment="center"
-
-                >
-            </TextView>
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:layout_marginRight="22.5dp"
+                ></TextView>
 
         </LinearLayout>
         <!--Buttons Area (1st layer)-->
@@ -66,7 +65,7 @@
                 android:layout_height="150dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="20dp"
-                android:background="@color/purple_200"
+                android:background="@color/dark_purple"
                 >
 
                 <ImageView
@@ -116,11 +115,33 @@
 
 
         </LinearLayout>
+        <ImageView
+            android:id="@+id/guide_prep"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/prep"
+            android:layout_marginTop="15dp">
+        </ImageView>
 
+        <TextView
+            android:id="@+id/guide_preperation"
+            android:layout_width="306dp"
+            android:textColor="@color/dark_purple"
+            android:layout_height="555dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginBottom="3dp"
+            android:paddingBottom="30dp"
+            android:text="1.Define Your Needs and Budget:Determine your PC usage and set a budget.
 
+            2.Research Components: Look into CPU, GPU, motherboard, RAM, storage, power supply, and case options.
 
-
-
+            3.Compatibility Check: Ensure all components are compatible with each other."
+            android:textSize="30dp" />
 
     </LinearLayout>
 </ScrollView>
