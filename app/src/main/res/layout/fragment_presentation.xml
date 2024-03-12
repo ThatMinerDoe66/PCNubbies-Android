@@ -10,27 +10,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-    <LinearLayout
-        android:id="@+id/prepbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/dark_purple"
-        android:orientation="vertical"
-        android:layout_marginTop="0dp">
-        <TextView
-        android:id="@+id/homeicon"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="PREPERATION"
-        android:fontFamily="@font/inter_med"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        >
+        <LinearLayout
+            android:id="@+id/prepbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_purple"
+            android:orientation="vertical"
+            android:layout_marginTop="0dp">
+            <TextView
+                android:id="@+id/homeicon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PREPERATION"
+                android:fontFamily="@font/inter_med"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                >
 
-        </TextView>
-    </LinearLayout>
+            </TextView>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="45dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="-45dp"
+                android:text="Button"
+                android:background="@drawable/back_arrow"
+                />
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/guide_prep"
