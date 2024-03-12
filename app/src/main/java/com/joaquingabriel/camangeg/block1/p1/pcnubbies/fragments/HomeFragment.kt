@@ -37,6 +37,15 @@ class HomeFragment : Fragment(R.layout.fragment_home, ) {
         val shop: ImageView = view.findViewById(R.id.shop)
         val guides: ImageView = view.findViewById(R.id.guides)
 
+        //OnClick on Buttons
+
+        guides.setOnClickListener {
+            replaceFragment(GuideFragment())
+        }
+
+        shop.setOnClickListener {
+            replaceFragment(ShopFragment())
+        }
     }
 
     override fun onCreateView(
