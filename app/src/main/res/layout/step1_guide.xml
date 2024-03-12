@@ -89,6 +89,7 @@
                     android:textColor="@color/white"
                     android:textSize="30dp"
                     android:textStyle="bold"
+
                     app:layout_constraintEnd_toStartOf="@+id/next_button"
                     tools:layout_editor_absoluteY="29dp"></TextView>
 
@@ -127,20 +128,23 @@
         <TextView
             android:id="@+id/guide_preperation"
             android:layout_width="306dp"
-            android:textColor="@color/dark_purple"
-            android:layout_height="555dp"
+            android:layout_height="703dp"
             android:layout_marginStart="40dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="0dp"
             android:layout_marginRight="80dp"
             android:layout_marginBottom="3dp"
+            android:lineSpacingExtra="10.5dp"
+            android:padding="5dp"
+            android:paddingHorizontal="50dp"
             android:paddingBottom="30dp"
-            android:text="1.Define Your Needs and Budget:Determine your PC usage and set a budget.
+            android:text="1.Determine your PC usage and set a budget.
 
             2.Research Components: Look into CPU, GPU, motherboard, RAM, storage, power supply, and case options.
 
-            3.Compatibility Check: Ensure all components are compatible with each other."
+            3.Ensure all components are compatible with each other."
+            android:textColor="@color/dark_purple"
             android:textSize="30dp" />
 
     </LinearLayout>
