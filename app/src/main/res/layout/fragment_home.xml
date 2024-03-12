@@ -89,43 +89,8 @@
                 android:orientation="vertical">
 
             </LinearLayout>
-
-            <!--Shop-->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="193dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:background="@color/veryDark_purple">
-
-
-                <ImageView
-                    android:id="@+id/topbuild"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/btn_topbuild"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="0dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_margin="5dp"
-                    android:text="Top Builds"
-                    android:textColor="@color/whitish_yellow"
-                    android:textSize="30dp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/topbuild">
-
-                </TextView>
-                <!--Add image in background later-->
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <!--Shop-->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="193dp"
+                android:layout_width="393dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
@@ -144,11 +109,13 @@
                     android:layout_width="184dp"
                     android:layout_height="40dp"
                     android:layout_margin="5dp"
+                    android:layout_marginTop="4dp"
                     android:text="Guides"
                     android:textColor="@color/whitish_yellow"
                     android:textSize="30dp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
