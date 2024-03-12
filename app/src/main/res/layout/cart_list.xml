@@ -3,14 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
+        android:layout_width="340dp"
+        android:layout_height="100dp"
         app:cardBackgroundColor="@color/dark_purple"
         app:cardCornerRadius="15dp"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,42 +27,46 @@
                 android:layout_marginStart="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent" />
 
             <TextView
                 android:id="@+id/itemBrand"
-                android:layout_width="wrap_content"
+                android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:text="Brand name goes here"
-                android:textSize="25sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/whitish_yellow"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="0dp"
                 app:layout_constraintStart_toEndOf="@+id/itemImg"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/itemUnit"/>
 
             <TextView
                 android:id="@+id/itemUnit"
-                android:layout_width="wrap_content"
+                android:layout_width="190dp"
                 android:layout_height="wrap_content"
-                android:text="Unit Name/Model goes here"
-                android:textSize="16sp"
+                android:text="Unit/Model Name goes here"
+                android:textSize="13sp"
                 android:textColor="@color/whitish_yellow"
                 android:layout_marginStart="20dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="30dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/itemImg"
                 app:layout_constraintTop_toBottomOf="@+id/itemBrand"/>
 
             <TextView
                 android:id="@+id/itemPrice"
-                android:layout_width="wrap_content"
+                android:layout_width="190dp"
                 android:layout_height="wrap_content"
                 android:text="Price here"
-                android:textSize="16sp"
+                android:textSize="13sp"
                 android:textColor="@color/whitish_yellow"
+                android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
-                android:layout_marginBottom="50dp"
+                android:layout_marginBottom="30dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/itemImg"
                 app:layout_constraintTop_toBottomOf="@+id/itemUnit"/>

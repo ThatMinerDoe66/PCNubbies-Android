@@ -16,7 +16,7 @@
         <LinearLayout
             android:id="@+id/titleBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:background="@color/dark_purple"
             android:orientation="horizontal"
             android:padding="15dp">
@@ -26,39 +26,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="PCNUBBIES"
-                android:fontFamily="@font/inter_med"
                 android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                ></TextView>
+                android:layout_gravity="center"
+                android:textColor="@color/whitish_yellow"
+                android:textSize="30sp"
+                android:textStyle="bold">
+
+            </TextView>
 
         </LinearLayout>
-        <!-- SearchBar -->
-        <LinearLayout
-            android:id="@+id/searchBar_background"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/purple150"
-            android:orientation="horizontal" />
 
         <!--Buttons Area (1st layer)-->
-
         <LinearLayout
             android:id="@+id/welcometab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="0.2"
-                android:orientation="vertical">
-
-            </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="411dp"
@@ -72,13 +55,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
-                    android:text="Welcome to the PC Nubbies Dashboard"
-                    android:textColor="@color/white"
+                    android:layout_marginTop="9dp"
+                    android:text="Dashboard\n(maybe carousel here)"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:textColor="@color/whitish_yellow"
                     android:textSize="25dp"
                     android:textStyle="bold"
-                    android:fontFamily="@font/inter_med"
-                    tools:layout_editor_absoluteX="5dp"
-                    tools:layout_editor_absoluteY="5dp"></TextView>
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                </TextView>
                 <!--Add image in background later-->
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -97,18 +86,50 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="0.2"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical">
 
-            <!--Shop-->
+            </LinearLayout>
 
             <!--Shop-->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="300dp"
-                android:layout_height="110dp"
-                android:layout_marginTop="-10dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginEnd="50dp"
-                android:background="@color/dark_purple">
+                android:layout_width="193dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/veryDark_purple">
+
+
+                <ImageView
+                    android:id="@+id/topbuild"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/btn_topbuild"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="0dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dp"
+                    android:text="Top Builds"
+                    android:textColor="@color/whitish_yellow"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/topbuild">
+
+                </TextView>
+                <!--Add image in background later-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--Shop-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="193dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/purple_200">
 
                 <ImageView
                     android:id="@+id/guides"
@@ -120,17 +141,18 @@
                     tools:layout_editor_absoluteY="0dp" />
 
                 <TextView
-                    android:layout_width="300dp"
+                    android:layout_width="184dp"
                     android:layout_height="40dp"
                     android:layout_margin="5dp"
                     android:text="Guides"
-                    android:textColor="@color/white"
+                    android:textColor="@color/whitish_yellow"
                     android:textSize="30dp"
                     android:textStyle="bold"
-                    android:fontFamily="@font/inter_med"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"></TextView>
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </TextView>
                 <!--Add image in background later-->
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -150,16 +172,17 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="0.2"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical">
+
+            </LinearLayout>
 
             <!--Shop-->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="300dp"
-                android:layout_height="110dp"
-                android:layout_marginTop="-10dp"
-                android:layout_marginBottom="20dp"
-                android:layout_marginEnd="50dp"
-                android:background="@color/dark_purple">
+                android:layout_width="393dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/purple_200">
 
                 <ImageView
                     android:scaleType="fitXY"
@@ -174,28 +197,18 @@
                     android:layout_width="100dp"
                     android:layout_height="45dp"
                     android:layout_margin="5dp"
-                    android:text="Shops"
-                    android:textColor="@color/white"
+                    android:text="Shop"
+                    android:textColor="@color/whitish_yellow"
                     android:textSize="30dp"
                     android:textStyle="bold"
-                    android:fontFamily="@font/inter_med"
-                    tools:ignore="MissingConstraints"></TextView>
+                    tools:ignore="MissingConstraints">
+
+                </TextView>
                 <!--Add image in background later-->
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/productlist"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
 
     </LinearLayout>
 </ScrollView>
