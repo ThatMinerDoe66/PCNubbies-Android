@@ -18,8 +18,6 @@ import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment(R.layout.fragment_home, ) {
 
-    private lateinit var adapter: cpufragAdapter
-    private lateinit var recyclerView: RecyclerView
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,44 +34,9 @@ class HomeFragment : Fragment(R.layout.fragment_home, ) {
 
 
         //call images from xml
-        val shop : ImageView = view.findViewById(R.id.shop)
-        val guides : ImageView = view.findViewById(R.id.guides)
+        val shop: ImageView = view.findViewById(R.id.shop)
+        val guides: ImageView = view.findViewById(R.id.guides)
 
-        //onClickListener
-        guides.setOnClickListener{
-            //bottomNavigation.show(2)  <<Wtf, I can't update the navbar on this one!
-            replaceFragment(GuideFragment())
-        }
-
-        shop.setOnClickListener{
-            //bottomNavigation.show(0)   <<AAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHH
-            replaceFragment(ShopFragment())
-        }
-
-
-        //Code for Items in Shop
-        recyclerView = view.findViewById(R.id.productlist)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-
-        //initialize adapter with empty list
-        adapter = cpufragAdapter(mutableListOf())
-        recyclerView.adapter = adapter
-
-        //fetch the product list from API
-        fetchProductList()
-
-
-    }
-    //Code for Items in shop
-    private fun fetchProductList() {
-        lifecycleScope.launch {
-            val productList = NubbiesClient.fetchProducts(title = null, price = null)
-            if (productList != null) {
-                adapter.updateProducts(productList)
-            } else {
-                Toast.makeText(requireContext(), "Failed to load products", Toast.LENGTH_SHORT).show()
-            }
-        }
     }
 
     override fun onCreateView(

@@ -37,8 +37,8 @@ class Register : AppCompatActivity() {
         val inputConfirmPassword = findViewById<EditText>(R.id.input_confirmPassword)
 
         val registerButton = findViewById<Button>(R.id.register_button)
-        var currentGender = 0
-        val age = arrayOf("18-24","25-34", "35-45","46-59", "60+")
+        var currentGender = 3 //changed to 3 for confrim if pressed part
+        val age = arrayOf("Select Age Group","18-24","25-34", "35-45","46-59", "60+")
         val ageSpinner:Spinner = findViewById(R.id.age_range_spinner)
 
         val radioGroup: RadioGroup = findViewById(R.id.radio_group)
@@ -76,12 +76,13 @@ class Register : AppCompatActivity() {
             val age_group = ageSpinner.selectedItem.toString()
             var currentAge:Int = 0
             when(age_group){
+                "Select Age Group" -> currentAge = 0
                 "18-24" -> currentAge = 1
                 "25-34" -> currentAge = 2
                 "35-45" -> currentAge = 3
                 "45-59" -> currentAge = 4
                 "60+" -> currentAge = 5
-                else -> currentAge = 0
+
             }
 
             val gender = currentGender
@@ -91,47 +92,72 @@ class Register : AppCompatActivity() {
             //JSON data
             val registerDataJson = "{\"name\":\"$name\",\"email\":\"$email\", \"gender\":\"$gender\", \"age_range\":\"$currentAge\", \"password\":\"$password\"}"
 
-            if (password == confirmPassword){
-                try{
-                    val reader = JsonReader(StringReader(registerDataJson))
-                    reader.isLenient = true //converts to json format
-                    reader.beginObject()
-                    reader.close()
+            if (name != null){ // Name Check
+                if (email != null){ //Email Check
+                    if (password != null){ //Password Check
+                        if (confirmPassword != null){//ConfirmPassword Check
+                            if (gender == 0 || gender == 1){ //Gender Check
+                                if (currentAge != 0){
+                                    if (password == confirmPassword){
+                                        try{
+                                            val reader = JsonReader(StringReader(registerDataJson))
+                                            reader.isLenient = true //converts to json format
+                                            reader.beginObject()
+                                            reader.close()
 
-                    NubbiesClient.instance.createUser(name, email, gender,currentAge, password)
-                        .enqueue(object : Callback<DefaultResponse> {
-                            override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
-                                Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
-                            }
+                                            NubbiesClient.instance.createUser(name, email, gender,currentAge, password)
+                                                .enqueue(object : Callback<DefaultResponse> {
+                                                    override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
+                                                        Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
+                                                    }
 
-                            override fun onResponse(
-                                call: Call<DefaultResponse>,
-                                response: Response<DefaultResponse>
-                            ) {
-                                if (response.isSuccessful && response.body() != null){
-                                    Toast.makeText(applicationContext, response.body()!!.message, Toast.LENGTH_LONG).show()
-                                    val intent = Intent(this@Register, Login::class.java)
-                                    startActivity(intent)
-                                }
-                                else{
-                                    val errorMessage: String = try{
-                                        response.errorBody()?.string() ?:"failed to get a valid response. Response Code: ${response.code()}"
+                                                    override fun onResponse(
+                                                        call: Call<DefaultResponse>,
+                                                        response: Response<DefaultResponse>
+                                                    ) {
+                                                        if (response.isSuccessful && response.body() != null){
+                                                            Toast.makeText(applicationContext, response.body()!!.message, Toast.LENGTH_LONG).show()
+                                                            val intent = Intent(this@Register, Login::class.java)
+                                                            startActivity(intent)
+                                                        }
+                                                        else{
+                                                            val errorMessage: String = try{
+                                                                response.errorBody()?.string() ?:"failed to get a valid response. Response Code: ${response.code()}"
+                                                            }
+                                                            catch (e: Exception){
+                                                                "Failed to get a valid response, Response Code: ${response.code()}"
+                                                            }
+                                                            Toast.makeText(applicationContext, errorMessage, Toast.LENGTH_LONG).show()
+                                                            Log.e("API_RESPONSE", errorMessage)
+                                                        }
+                                                    }
+                                                })
+                                        } catch (e: Exception){
+                                            Toast.makeText(this, "Error parsing json", Toast.LENGTH_SHORT).show()
+                                            e.printStackTrace()
+                                        }
+                                    } else if (password != confirmPassword){
+                                        Toast.makeText(applicationContext, "Password does not match!", Toast.LENGTH_LONG).show()
                                     }
-                                    catch (e: Exception){
-                                        "Failed to get a valid response, Response Code: ${response.code()}"
-                                    }
-                                    Toast.makeText(applicationContext, errorMessage, Toast.LENGTH_LONG).show()
-                                    Log.e("API_RESPONSE", errorMessage)
+                                } else if (currentAge == 0){
+                                    Toast.makeText(this, "Select your age group", Toast.LENGTH_SHORT).show()
                                 }
+                            }else if (gender == 3){
+                                Toast.makeText(this, "Select your gender", Toast.LENGTH_SHORT).show()
                             }
-                        })
-                } catch (e: Exception){
-                    Toast.makeText(this, "Error parsing json", Toast.LENGTH_SHORT).show()
-                    e.printStackTrace()
+                        } else if (confirmPassword == null){
+                            Toast.makeText(this, "Please confirm your password", Toast.LENGTH_SHORT).show()
+                        }
+                    } else if(password == null){
+                        Toast.makeText(this, "Enter your password", Toast.LENGTH_SHORT).show()
+                    }
+                } else if (email == null){
+                    Toast.makeText(this, "Enter your email", Toast.LENGTH_SHORT).show()
                 }
-            } else if (password != confirmPassword){
-                Toast.makeText(applicationContext, "Password does not match!", Toast.LENGTH_LONG).show()
+            } else if (name == null){
+                Toast.makeText(this, "Enter your name", Toast.LENGTH_SHORT).show()
             }
+
         }
 
     }
