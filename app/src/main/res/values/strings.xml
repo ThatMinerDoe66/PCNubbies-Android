@@ -2,4 +2,9 @@
     <string name="app_name">PCNubbies</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="prep_no1">1. Determine your PC usage and set a budget.</string>
+    <string name="prep_no2">2. Research Components: Look into CPU, GPU, motherboard, RAM, storage, power supply, and case options.</string>
+    <string name="prep_no3">3. Ensure all components are compatible with each other.</string>
+
 </resources>
