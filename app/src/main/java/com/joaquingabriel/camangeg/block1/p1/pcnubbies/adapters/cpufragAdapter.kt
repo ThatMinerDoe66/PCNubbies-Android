@@ -7,11 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.R
+import com.joaquingabriel.camangeg.block1.p1.pcnubbies.fragments.ShopFragment
 
-class cpufragAdapter(private var frag_cpuproducts: MutableList<Product>) :
-    RecyclerView.Adapter<cpufragAdapter.MyViewHolder>() {
+class cpufragAdapter(
+    private var frag_cpuproducts: MutableList<Product>,
+    private val lifecycleOwner: LifecycleOwner,
+    private val listener: OnItemClickListener
+) : RecyclerView.Adapter<cpufragAdapter.MyViewHolder>() {
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.frag_cpuproducts, parent, false)
@@ -28,10 +35,42 @@ class cpufragAdapter(private var frag_cpuproducts: MutableList<Product>) :
         holder.Ad_price.text = product.price
         // Assuming product.product_images is a list of image URLs or drawable resource names
         // You'll need to decide how to handle multiple images or select one to display
-        val imageUrl = product.product_images.firstOrNull()?.image ?: ""
-        // Load the image using a library like Glide or Picasso, or use a drawable resource if imageUrl is a resource name
-        // For example, using Glide:
-        // Glide.with(holder.itemView.context).load(imageUrl).into(holder.Ad_image)
+        val imageUrl = if (product.product_images != null && product.product_images.isNotEmpty()){
+            product.product_images.first().image
+        } else{
+            ""
+        }
+        Glide.with(holder.itemView.context)
+            .load(imageUrl)
+            .placeholder(R.drawable.placeholder_image) // Placeholder image
+            .error(R.drawable.error_image) // Error image
+            .into(holder.Ad_image)
+
+        holder.itemView.setOnClickListener {
+            listener.onItemClick(product.id) // Notify the listener about the click
+        }
+
+//        holder.itemView.setOnClickListener {
+//            val productId = product.id
+//            val quantity = 1
+//            lifecycleOwner.lifecycleScope.launch {
+//                try {
+//                    val response = NubbiesClient.addProductToCart(productId, quantity)
+//                    if (response.isSuccessful) {
+//                        Toast.makeText(holder.itemView.context, "Product added to cart", Toast.LENGTH_SHORT).show()
+//                        // Optionally, refresh the cart or navigate to the CartFragment
+//                    } else {
+//                        Toast.makeText(holder.itemView.context, "Failed to add product to cart", Toast.LENGTH_SHORT).show()
+//                    }
+//                } catch (e: Exception) {
+//                    Toast.makeText(holder.itemView.context, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//        }
+    }
+
+    interface OnItemClickListener {
+        fun onItemClick(productId: Int)
     }
 
     fun updateProducts(newProducts: List<Product>) {

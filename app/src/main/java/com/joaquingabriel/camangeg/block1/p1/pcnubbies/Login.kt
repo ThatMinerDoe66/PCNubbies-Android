@@ -75,7 +75,7 @@ class Login : AppCompatActivity() {
                                 AuthPrefs.storeApiToken(this@Login, response.body()!!.access_token) //grabs API token
 
                                 Toast.makeText(applicationContext, response.body()!!.message, Toast.LENGTH_LONG).show()
-                                val intent = Intent(this@Login, MainActivity::class.java)//make this into a login
+                                val intent = Intent(this@Login, MainActivity::class.java)
                                 startActivity(intent)
                             }
                             else{

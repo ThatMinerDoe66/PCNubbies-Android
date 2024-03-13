@@ -7,9 +7,10 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="340dp"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         app:cardBackgroundColor="@color/dark_purple"
         app:cardCornerRadius="15dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,55 +22,100 @@
 
             <ImageView
                 android:id="@+id/itemImg"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/mobo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="20dp"
+                android:src="@drawable/mobo"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/itemBrand"
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
                 android:text="Brand name goes here"
+                android:textColor="@color/whitish_yellow"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="@color/whitish_yellow"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/itemUnit"
                 app:layout_constraintStart_toEndOf="@+id/itemImg"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/itemUnit"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/itemUnit"
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="50dp"
                 android:text="Unit/Model Name goes here"
-                android:textSize="13sp"
                 android:textColor="@color/whitish_yellow"
-                android:layout_marginStart="20dp"
-                android:layout_marginBottom="30dp"
+                android:textSize="13sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/itemImg"
-                app:layout_constraintTop_toBottomOf="@+id/itemBrand"/>
+                app:layout_constraintTop_toBottomOf="@+id/itemBrand" />
 
             <TextView
                 android:id="@+id/itemPrice"
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
-                android:text="Price here"
-                android:textSize="13sp"
-                android:textColor="@color/whitish_yellow"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="00dp"
                 android:layout_marginBottom="30dp"
+                android:text="Price here"
+                android:textColor="@color/whitish_yellow"
+                android:textSize="13sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/itemImg"
-                app:layout_constraintTop_toBottomOf="@+id/itemUnit"/>
+                app:layout_constraintTop_toBottomOf="@+id/itemUnit" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/minus_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cart_minus_quantity"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/add_quantity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/itemPrice"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/itemQuantity"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Quantity"
+                android:textColor="@color/whitish_yellow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/add_quantity"
+                app:layout_constraintStart_toEndOf="@+id/minus_quantity"
+                app:layout_constraintTop_toBottomOf="@+id/itemPrice"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/add_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="88dp"
+                android:src="@drawable/cart_plus_quantity"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/itemPrice"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/removeProduct"
+                android:layout_width="30dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/cart_remove_item"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

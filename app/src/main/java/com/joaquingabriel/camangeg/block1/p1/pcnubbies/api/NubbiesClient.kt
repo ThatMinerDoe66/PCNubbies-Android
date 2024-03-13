@@ -1,16 +1,17 @@
 package com.joaquingabriel.camangeg.block1.p1.pcnubbies.api
 
 import Product
-import ProductResponse
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
-import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.AddToCartRequest
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.CartProduct
+import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.DefaultResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
@@ -34,7 +35,16 @@ object NubbiesClient {
 
                 if (response.isSuccessful) {
                     val cartResponse = response.body()
-                    cartResponse?.data?.products ?: emptyList()
+                    cartResponse?.data?.let { data ->
+                        // Map the quantity from CartItem to CartProduct
+                        data.products.map { cartProduct ->
+                            val cartItem = data.items.find { it.productId == cartProduct.id }
+                            val updatedCartProduct = cartProduct.copy(cartQuantity = cartItem?.quantity ?: 0)
+                            Log.d("NubbiesClient", "Product: ${cartProduct.title}, Cart Quantity: ${updatedCartProduct.cartQuantity}")
+                            updatedCartProduct
+                        }
+
+                    } ?: emptyList()
                 } else {
                     Log.e("NubbiesClient", "Error fetching cart products: ${response.errorBody()?.string()}")
                     emptyList()
@@ -48,9 +58,25 @@ object NubbiesClient {
 
 
 
+    suspend fun addToCart(productId: Int, quantity: Int): Response<DefaultResponse> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val request = AddToCartRequest(quantity)
+                val response = instance.addToCart(productId, request)
+                if (response.isSuccessful) {
+                    response
+                } else {
+                    throw Exception("Error adding product to cart: ${response.errorBody()?.string()}")
+                }
+            } catch (e: Exception) {
+                Log.e("NubbiesClient", "Error adding product to cart", e)
+                throw e
+            }
+        }
+    }
 
 
-    suspend fun fetchProducts(title: String?, price: Double?): List<Product>? {
+    suspend fun fetchProducts(title: String?, price: Double?): List<Product>? { //Fetches all products
         return withContext(Dispatchers.IO) {
             try {
                 val response = NubbiesClient.instance.getProductList(title, price)
@@ -91,6 +117,8 @@ object NubbiesClient {
         //val instance: NubbiesAPI = retrofit.create(NubbiesAPI::class.java)
 
         return retrofit.create(NubbiesAPI::class.java)
+
+
     }
     private const val BASE_URL = "https://pcnubbies.pcnubbies.tech/api/"
 }

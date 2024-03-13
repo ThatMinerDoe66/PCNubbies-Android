@@ -1,12 +1,14 @@
 package com.joaquingabriel.camangeg.block1.p1.pcnubbies.api
 
 import ProductResponse
+import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.AddToCartRequest
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.CartResponse
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.DefaultResponse
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.LoginResponse
 
 import retrofit2.Call
 import retrofit2.Response
+import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
@@ -27,6 +29,12 @@ interface NubbiesAPI {
     @GET("carts")
     suspend fun getCartItems(): Response<CartResponse>
 
+    //Adds to Cart
+    @POST("cart/{product_id}")
+    suspend fun addToCart(
+        @Path("product_id") productId: Int,
+        @Body request: AddToCartRequest
+    ): Response<DefaultResponse>
 
 
     //Register

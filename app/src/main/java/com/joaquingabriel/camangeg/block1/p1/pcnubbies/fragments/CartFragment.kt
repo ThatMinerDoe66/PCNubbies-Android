@@ -33,24 +33,26 @@ class CartFragment : Fragment(R.layout.cartsection) {
     }
 
     private fun fetchCartItems() {
-        // Use lifecycleScope to launch a coroutine
         lifecycleScope.launch {
-            // Fetch cart items from your API
             val response = NubbiesClient.instance.getCartItems()
             if (response.isSuccessful) {
                 val cartResponse = response.body()
-                // Extract the products list from the Data object
+                val cartItems = cartResponse?.data?.items ?: emptyList()
                 val cartProducts = cartResponse?.data?.products ?: emptyList()
-                cartAdapter.updateProducts(cartProducts)
+
+                // Assuming the order of items in the list matches the order of products
+                val updatedCartProducts = cartProducts.mapIndexed { index, cartProduct ->
+                    val cartItemQuantity = cartItems.getOrNull(index)?.quantity ?: 0
+                    cartProduct.copy(cartQuantity = cartItemQuantity)
+                }
+
+                cartAdapter.updateProducts(updatedCartProducts)
             } else {
-                // Handle error, e.g., show a message to the user
-                Log.e(
-                    "CartFragment",
-                    "Error fetching cart items: ${response.errorBody()?.string()}"
-                )
+                Log.e("CartFragment", "Error fetching cart items: ${response.errorBody()?.string()}")
             }
         }
     }
 
 }
+
 

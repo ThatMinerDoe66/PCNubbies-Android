@@ -39,7 +39,7 @@
             android:id="@+id/shop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="10dp"
             android:textAlignment="center">
 
             <ImageView
@@ -78,7 +78,6 @@
             android:layout_height="wrap_content"
             android:scrollbarStyle="insideInset"
             android:fadeScrollbars="true"
-            android:layout_marginTop="50dp"
             android:layout_marginBottom="10dp">
 
             <LinearLayout
@@ -430,7 +429,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="50dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/productlist"

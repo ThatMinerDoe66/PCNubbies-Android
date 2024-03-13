@@ -25,17 +25,22 @@ class cartfragAdapter(private var cart_list: MutableList<CartProduct>) :
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val cartProduct = cart_list[position]
+        Log.d("cartfragAdapter", "Product: ${cartProduct.title}, Cart Quantity: ${cartProduct.cartQuantity}")
         holder.Ad_name.text = cartProduct.title
         holder.Ad_price.text = cartProduct.price
-        // Assuming cartProduct.product_images is a list of image URLs or drawable resource names
-        // You'll need to decide how to handle multiple images or select one to display
+        holder.Ad_quantity.text = cartProduct.cartQuantity.toString() // Use cartQuantity here
+        // Assuming cartProduct.product_images is a list of objects with an 'image' property
         val imageUrl = if (cartProduct.product_images != null && cartProduct.product_images.isNotEmpty()) {
-            cartProduct.product_images.first().image
+            cartProduct.product_images.first().image // Extract the first image URL
         } else {
-            ""
+            "" // Fallback URL or placeholder
         }
         // Load the image using Glide
-        Glide.with(holder.itemView.context).load(imageUrl).into(holder.Ad_image)
+        Glide.with(holder.itemView.context)
+            .load(imageUrl)
+            .placeholder(R.drawable.placeholder_image) // Placeholder image
+            .error(R.drawable.error_image) // Error image
+            .into(holder.Ad_image)
         // Display brand and unit if available
         holder.Ad_unit.text = cartProduct.title //apparently the Model of the product
 
@@ -54,6 +59,6 @@ class cartfragAdapter(private var cart_list: MutableList<CartProduct>) :
         val Ad_price: TextView = itemView.findViewById(R.id.itemPrice)
         val Ad_image: ImageView = itemView.findViewById(R.id.itemImg)
         val Ad_unit: TextView = itemView.findViewById(R.id.itemUnit) //apparently the Model of the product
-        //val Ad_quantity: TextView = itemView.findViewById(R.id.itemQuantity) // Make sure to add this view in your layout
+        val Ad_quantity: TextView = itemView.findViewById(R.id.itemQuantity) // Make sure to add this view in your layout
     }
 }
