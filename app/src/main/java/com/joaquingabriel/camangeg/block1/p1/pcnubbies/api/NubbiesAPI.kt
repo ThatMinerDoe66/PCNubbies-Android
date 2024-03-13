@@ -5,6 +5,7 @@ import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.AddToCartRequest
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.CartResponse
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.DefaultResponse
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.LoginResponse
+import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.UserProfile
 
 import retrofit2.Call
 import retrofit2.Response
@@ -12,6 +13,7 @@ import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.Headers
 import retrofit2.http.POST
 import retrofit2.http.Path
@@ -59,5 +61,9 @@ interface NubbiesAPI {
         @Field("password") password:String
     ): Call<LoginResponse>
 
-
+    //User Data
+    @GET("user")
+    suspend fun fetchUserProfile(
+        @Header("Authorization") bearerToken: String
+    ): Response<UserProfile>
 }

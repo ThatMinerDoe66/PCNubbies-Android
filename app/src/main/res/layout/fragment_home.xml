@@ -121,7 +121,7 @@
 
 
 
-        <!--Buttons Area (1st layer)-->
+        <!--Buttons Area (2nd layer)-->
         <LinearLayout
             android:id="@+id/buttonLayer3"
             android:layout_width="match_parent"
