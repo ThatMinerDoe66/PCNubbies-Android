@@ -11,7 +11,6 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.R
-import com.joaquingabriel.camangeg.block1.p1.pcnubbies.fragments.ShopFragment
 
 class cpufragAdapter(
     private var frag_cpuproducts: MutableList<Product>,
@@ -81,8 +80,8 @@ class cpufragAdapter(
     }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val Ad_title: TextView = itemView.findViewById(R.id.frag_name)
-        val Ad_price: TextView = itemView.findViewById(R.id.frag_price)
-        val Ad_image: ImageView = itemView.findViewById(R.id.frag_img)
+        val Ad_title: TextView = itemView.findViewById(R.id.profile_name)
+        val Ad_price: TextView = itemView.findViewById(R.id.profile_email)
+        val Ad_image: ImageView = itemView.findViewById(R.id.profile_img)
     }
 }
