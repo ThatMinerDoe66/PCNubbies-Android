@@ -1,4 +1,4 @@
-    <?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -135,30 +135,30 @@
             android:layout_marginEnd="15dp">
 
             <TextView
-                android:id="@+id/prepno1"
-                android:layout_width="150dp"
+                android:id="@+id/prep7no1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1) Identify your primary use (e.g., gaming, video editing) and set a budget."
+                android:text="@string/prep7_no1"
                 android:fontFamily="@font/inter_med"
                 android:textColor="@color/dark_purple"
                 android:textSize="20sp"
                 android:lineSpacingExtra="15dp"
                 android:layout_marginEnd="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/prepno1img"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toTopOf="@+id/prep7no1img"/>
 
             <ImageView
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:id="@+id/prep7no1img"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
                 android:src="@drawable/gpu1"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.583"
-                app:layout_constraintStart_toEndOf="@id/prepno1"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.567" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prep7no1"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -170,31 +170,31 @@
             android:layout_marginEnd="15dp">
 
             <TextView
-                android:id="@+id/prepno2"
+                android:id="@+id/prep7no2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:lineSpacingExtra="15dp"
-                android:text="2)  Ensure the GPU fits your motherboard's PCIe slot and your power supply can handle its power requirements."
+                android:text="@string/prep7_no2"
                 android:fontFamily="@font/inter_med"
                 android:textColor="@color/dark_purple"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@id/prepno2img"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                android:layout_marginTop="30dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/prep7no2img"/>
 
             <ImageView
-
+                android:id="@+id/prep7no2img"
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
                 android:src="@drawable/gpu2"
                 android:scaleType="fitXY"
                 android:layout_marginTop="30dp"
-                app:layout_constraintTop_toBottomOf="@id/prepno2"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/prep7no2"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -207,27 +207,29 @@
             android:layout_marginEnd="15dp">
 
             <TextView
-                android:layout_width="170dp"
+                android:id="@+id/prep7no3"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3) Research benchmarks and reviews to find a GPU within your budget that offers the best performance for your needs."
+                android:text="@string/prep7_no3"
                 android:fontFamily="@font/inter_med"
                 android:textColor="@color/dark_purple"
                 android:textSize="20sp"
                 android:lineSpacingExtra="15dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/prepno3img"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintBottom_toTopOf="@+id/prep7no3img"/>
 
             <ImageView
-                android:id="@+id/prepno3img"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:id="@+id/prep7no3img"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
                 android:src="@drawable/gpu3"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/prepno3"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/prep7no3"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

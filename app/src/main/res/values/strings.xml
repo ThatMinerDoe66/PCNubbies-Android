@@ -3,8 +3,32 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="prep_no1">1. Determine your PC usage and set a budget.</string>
-    <string name="prep_no2">2. Research Components: Look into CPU, GPU, motherboard, RAM, storage, power supply, and case options.</string>
-    <string name="prep_no3">3. Ensure all components are compatible with each other.</string>
+    <string name="prep1_no1">1. Determine your PC usage and set a budget.</string>
+    <string name="prep1_no2">2. Research Components: Look into CPU, GPU, motherboard, RAM, storage, power supply, and case options.</string>
+    <string name="prep1_no3">3. Ensure all components are compatible with each other.</string>
+
+    <string name="prep2_no1">1) Determine your primary tasks (e.g., gaming, productivity).</string>
+    <string name="prep2_no2">2) Ensure CPU matches your motherboard\'s socket and chipset.</string>
+    <string name="prep2_no3">3) Research benchmarks and reviews for value within your budget</string>
+
+    <string name="prep3_no1">1) Ensure RAM matches your motherboard\'s type, speed, and capacity.</string>
+    <string name="prep3_no2">2) Determine your needs (e.g., gaming, multitasking) and choose appropriate RAM capacity (e.g., 8GB, 16GB)</string>
+    <string name="prep3_no3">3) Look for higher speed and lower latency RAM for improved performance, balancing with your budget.</string>
+
+    <string name="prep4_no1">1) Ensure the motherboard matches your CPU socket type and supports other components like RAM and GPUs</string>
+    <string name="prep4_no2">2) Look for essential features like USB ports, PCIe slots, and M.2 slots based on your needs (e.g., gaming, productivity)</string>
+    <string name="prep4_no3">3) search user reviews and manufacturer support to ensure reliability and compatibility, especially for beginners (But still don\'t be bias itself).</string>
+
+    <string name="prep5_no1">1) Determine your system\'s power needs and choose a PSU with adequate wattage and a high efficiency rating (80 Plus Bronze or higher).</string>
+    <string name="prep5_no2">2) Opt for a PSU from a trusted manufacturer known for reliability and quality components.</string>
+    <string name="prep5_no3">3) Select a PSU with slightly higher wattage to accommodate potential future upgrades while ensuring stable power delivery.</string>
+
+    <string name="prep6_no1">1) Ensure the SSD is compatible with your motherboard\'s interface (e.g., SATA, NVMe)</string>
+    <string name="prep6_no2">2) Choose a capacity that meets your storage needs and look for SSDs with faster read/write speeds for improved performance..</string>
+    <string name="prep6_no3">3) Research user reviews and reliability ratings to ensure you\'re getting a dependable SSD from a reputable manufacturer.</string>
+
+    <string name="prep7_no1">1) Identify your primary use (e.g., gaming, video editing) and set a budget.</string>
+    <string name="prep7_no2">2) Ensure the GPU fits your motherboard\'s PCIe slot and your power supply can handle its power requirements.</string>
+    <string name="prep7_no3">3) Research benchmarks and reviews to find a GPU within your budget that offers the best performance for your needs.</string>
 
 </resources>

@@ -126,6 +126,7 @@
         </LinearLayout>
 
         <!--Put steps here-->
+        <!--
         <LinearLayout
             android:id="@+id/buttonLayer2"
             android:layout_width="match_parent"
@@ -135,6 +136,7 @@
 
 
         </LinearLayout>
+        -->
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -144,30 +146,30 @@
             android:layout_marginEnd="15dp">
 
             <TextView
-                android:id="@+id/prepno1"
-                android:layout_width="150dp"
+                android:id="@+id/prep4no1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1) Ensure the motherboard matches your CPU socket type and supports other components like RAM and GPUs"
+                android:text="@string/prep4_no1"
                 android:fontFamily="@font/inter_med"
                 android:textColor="@color/dark_purple"
                 android:textSize="20sp"
                 android:lineSpacingExtra="15dp"
                 android:layout_marginEnd="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/prepno1img"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toTopOf="@id/prep4no1img"/>
 
             <ImageView
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:id="@+id/prep4no1img"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
                 android:src="@drawable/mobo1"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.583"
-                app:layout_constraintStart_toEndOf="@id/prepno1"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.567" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/prep4no1"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -179,28 +181,27 @@
             android:layout_marginEnd="15dp">
 
             <TextView
-                android:id="@+id/prepno2"
+                android:id="@+id/prep4no2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:lineSpacingExtra="15dp"
-                android:text="2)  Look for essential features like USB ports, PCIe slots, and M.2 slots based on your needs (e.g., gaming, productivity)"
+                android:text="@string/prep4_no2"
                 android:fontFamily="@font/inter_med"
                 android:textColor="@color/dark_purple"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@id/prepno2img"
+                app:layout_constraintBottom_toTopOf="@id/prep4no2img"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-
+                android:id="@+id/prep4no2img"
                 android:layout_width="match_parent"
-                android:layout_height="230dp"
+                android:layout_height="175dp"
                 android:src="@drawable/mobo2"
-                android:scaleType="fitXY"
                 android:layout_marginTop="30dp"
-                app:layout_constraintTop_toBottomOf="@id/prepno2"
+                app:layout_constraintTop_toBottomOf="@id/prep4no2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -216,27 +217,31 @@
             android:layout_marginEnd="15dp">
 
             <TextView
-                android:layout_width="170dp"
+                android:id="@+id/prep4no3"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3) search user reviews and manufacturer support to ensure reliability and compatibility, especially for beginners (But still don't be bias itself)."
+                android:text="@string/prep4_no3"
                 android:fontFamily="@font/inter_med"
                 android:textColor="@color/dark_purple"
                 android:textSize="20sp"
                 android:lineSpacingExtra="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/prepno3img"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintBottom_toTopOf="@id/prep4no3img"/>
 
             <ImageView
-                android:id="@+id/prepno3img"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:src="@drawable/mobo"
+                android:id="@+id/prep4no3img"
+                android:layout_width="match_parent"
+                android:layout_height="245dp"
+                android:src="@drawable/mobo3"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/prepno3"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/prep4no3"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

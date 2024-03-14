@@ -39,10 +39,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                android:layout_marginRight="22.5dp" >
-
-            </TextView>
+                android:textStyle="bold" />
 
         </LinearLayout>
         <!--Buttons Area (1st layer)-->
@@ -144,30 +141,28 @@
             android:layout_marginEnd="15dp">
 
             <TextView
-                android:id="@+id/prepno1"
+                android:id="@+id/prep5no1"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="1) Determine your system's power needs and choose a PSU with adequate wattage and a high efficiency rating (80 Plus Bronze or higher)."
+                android:text="@string/prep5_no1"
                 android:fontFamily="@font/inter_med"
                 android:textColor="@color/dark_purple"
                 android:textSize="20sp"
-                android:lineSpacingExtra="15dp"
-                android:layout_marginEnd="10dp"
+                android:lineSpacingExtra="13dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/prepno1img"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/prep5no1img"/>
 
             <ImageView
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:id="@+id/prep5no1img"
+                android:layout_width="195dp"
+                android:layout_height="180dp"
                 android:src="@drawable/catpsu2"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.583"
-                app:layout_constraintStart_toEndOf="@id/prepno1"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.567" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/prep5no1"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -179,28 +174,28 @@
             android:layout_marginEnd="15dp">
 
             <TextView
-                android:id="@+id/prepno2"
+                android:id="@+id/prep5no2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:lineSpacingExtra="15dp"
-                android:text="2)  Opt for a PSU from a trusted manufacturer known for reliability and quality components."
+                android:text="@string/prep5_no2"
                 android:fontFamily="@font/inter_med"
                 android:textColor="@color/dark_purple"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@id/prepno2img"
+                app:layout_constraintBottom_toTopOf="@id/prep5no2img"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-
+                android:id="@+id/prep5no2img"
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
                 android:src="@drawable/catpsu3"
                 android:scaleType="fitXY"
                 android:layout_marginTop="30dp"
-                app:layout_constraintTop_toBottomOf="@id/prepno2"
+                app:layout_constraintTop_toBottomOf="@id/prep5no2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -216,25 +211,26 @@
             android:layout_marginEnd="15dp">
 
             <TextView
+                android:id="@+id/prep5no3"
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
-                android:text="3) Select a PSU with slightly higher wattage to accommodate potential future upgrades while ensuring stable power delivery."
+                android:text="@string/prep5_no3"
                 android:fontFamily="@font/inter_med"
                 android:textColor="@color/dark_purple"
                 android:textSize="20sp"
                 android:lineSpacingExtra="15dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/prepno3img"
+                app:layout_constraintEnd_toStartOf="@+id/prep5no3img"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
 
             <ImageView
-                android:id="@+id/prepno3img"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:id="@+id/prep5no3img"
+                android:layout_width="190dp"
+                android:layout_height="185dp"
                 android:src="@drawable/catpsu4"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/prepno3"
+                app:layout_constraintStart_toEndOf="@id/prep5no3"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
 

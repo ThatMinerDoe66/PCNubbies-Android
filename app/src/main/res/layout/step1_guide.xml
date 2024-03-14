@@ -134,27 +134,27 @@
             android:layout_marginEnd="15dp">
 
             <TextView
-                android:id="@+id/prepno1"
+                android:id="@+id/prep1no1"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="@string/prep_no1"
+                android:text="@string/prep1_no1"
                 android:fontFamily="@font/inter_med"
                 android:textColor="@color/dark_purple"
                 android:textSize="20sp"
                 android:lineSpacingExtra="15dp"
                 android:layout_marginEnd="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/prepno1img"
+                app:layout_constraintEnd_toStartOf="@id/prep1no1img"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
             <ImageView
-                android:id="@+id/prepno1img"
+                android:id="@+id/prep1no1img"
                 android:layout_width="160dp"
                 android:layout_height="160dp"
                 android:src="@drawable/prep_no1_img"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/prepno1"
+                app:layout_constraintStart_toEndOf="@id/prep1no1"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
@@ -168,28 +168,27 @@
             android:layout_marginEnd="15dp">
 
             <TextView
-                android:id="@+id/prepno2"
+                android:id="@+id/prep1no2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:lineSpacingExtra="15dp"
-                android:text="@string/prep_no2"
+                android:text="@string/prep1_no2"
                 android:fontFamily="@font/inter_med"
                 android:textColor="@color/dark_purple"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@id/prepno2img"
+                app:layout_constraintBottom_toTopOf="@id/prep1no2img"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/prepno2img"
+                android:id="@+id/prep1no2img"
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
                 android:src="@drawable/prep_no2_img"
                 android:scaleType="fitXY"
                 android:layout_marginTop="30dp"
-                app:layout_constraintTop_toBottomOf="@id/prepno2"
+                app:layout_constraintTop_toBottomOf="@id/prep1no2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -205,26 +204,26 @@
             android:layout_marginEnd="15dp">
 
             <TextView
-                android:id="@+id/prepno3"
+                android:id="@+id/prep1no3"
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
-                android:text="@string/prep_no3"
+                android:text="@string/prep1_no3"
                 android:fontFamily="@font/inter_med"
                 android:textColor="@color/dark_purple"
                 android:textSize="20sp"
                 android:lineSpacingExtra="15dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/prepno3img"
+                app:layout_constraintEnd_toStartOf="@+id/prep1no3img"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
 
             <ImageView
-                android:id="@+id/prepno3img"
+                android:id="@+id/prep1no3img"
                 android:layout_width="160dp"
                 android:layout_height="160dp"
                 android:src="@drawable/prep_no3_img"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/prepno3"
+                app:layout_constraintStart_toEndOf="@id/prep1no3"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
 

@@ -144,30 +144,30 @@
             android:layout_marginEnd="15dp">
 
             <TextView
-                android:id="@+id/prepno1"
-                android:layout_width="150dp"
+                android:id="@+id/prep6no1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1) Ensure the SSD is compatible with your motherboard's interface (e.g., SATA, NVMe)"
+                android:text="@string/prep6_no1"
                 android:fontFamily="@font/inter_med"
                 android:textColor="@color/dark_purple"
                 android:textSize="20sp"
                 android:lineSpacingExtra="15dp"
                 android:layout_marginEnd="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/prepno1img"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toTopOf="@+id/prep6no1img"/>
 
             <ImageView
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:id="@+id/prep6no1img"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
                 android:src="@drawable/catstoragev2"
+                android:layout_marginTop="30dp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.583"
-                app:layout_constraintStart_toEndOf="@id/prepno1"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.567" />
+                app:layout_constraintTop_toBottomOf="@id/prep6no1"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -179,28 +179,28 @@
             android:layout_marginEnd="15dp">
 
             <TextView
-                android:id="@+id/prepno2"
+                android:id="@+id/prep6no2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:lineSpacingExtra="15dp"
-                android:text="2)  Choose a capacity that meets your storage needs and look for SSDs with faster read/write speeds for improved performance.."
+                android:text="@string/prep6_no2"
                 android:fontFamily="@font/inter_med"
                 android:textColor="@color/dark_purple"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@id/prepno2img"
+                app:layout_constraintBottom_toTopOf="@id/prep6no2img"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-
+                android:id="@+id/prep6no2img"
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
                 android:src="@drawable/catstorage3"
                 android:scaleType="fitXY"
                 android:layout_marginTop="30dp"
-                app:layout_constraintTop_toBottomOf="@id/prepno2"
+                app:layout_constraintTop_toBottomOf="@id/prep6no2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -216,27 +216,29 @@
             android:layout_marginEnd="15dp">
 
             <TextView
-                android:layout_width="170dp"
+                android:id="@+id/prep6no3"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="3) Research user reviews and reliability ratings to ensure you're getting a dependable SSD from a reputable manufacturer."
+                android:text="@string/prep6_no3"
                 android:fontFamily="@font/inter_med"
                 android:textColor="@color/dark_purple"
                 android:textSize="20sp"
                 android:lineSpacingExtra="15dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/prepno3img"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintBottom_toTopOf="@+id/prep6no3img"/>
 
             <ImageView
-                android:id="@+id/prepno3img"
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:id="@+id/prep6no3img"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
                 android:src="@drawable/catstoragev3"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/prepno3"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prep6no3"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
