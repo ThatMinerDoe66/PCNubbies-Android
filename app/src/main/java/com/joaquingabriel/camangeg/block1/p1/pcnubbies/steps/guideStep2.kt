@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.R
+import com.joaquingabriel.camangeg.block1.p1.pcnubbies.fragments.GuideFragment
 
 class guideStep2 : Fragment() {
 
