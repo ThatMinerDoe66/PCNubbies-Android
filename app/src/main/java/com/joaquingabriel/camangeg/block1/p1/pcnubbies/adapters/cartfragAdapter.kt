@@ -10,9 +10,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.R
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.CartProduct
 import com.bumptech.glide.Glide // Make sure to import Glide
+import com.joaquingabriel.camangeg.block1.p1.pcnubbies.api.NubbiesClient
+import com.joaquingabriel.camangeg.block1.p1.pcnubbies.api.NubbiesClient.productImagesMap
 
-class cartfragAdapter(private var cart_list: MutableList<CartProduct>) :
+class cartfragAdapter(private var cart_list: MutableList<CartProduct>,
+                      private val listener: OnProductRemoveListener) :
     RecyclerView.Adapter<cartfragAdapter.MyViewHolder>() {
+
+    // Define the interface
+    interface OnProductRemoveListener {
+        fun onProductRemove(productId: Int)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.cart_list, parent, false)
@@ -27,24 +35,28 @@ class cartfragAdapter(private var cart_list: MutableList<CartProduct>) :
         val cartProduct = cart_list[position]
         Log.d("cartfragAdapter", "Product: ${cartProduct.title}, Cart Quantity: ${cartProduct.cartQuantity}")
         holder.Ad_name.text = cartProduct.title
-        holder.Ad_price.text = cartProduct.price
-        holder.Ad_quantity.text = cartProduct.cartQuantity.toString() // Use cartQuantity here
-        // Assuming cartProduct.product_images is a list of objects with an 'image' property
-        val imageUrl = if (cartProduct.product_images != null && cartProduct.product_images.isNotEmpty()) {
-            cartProduct.product_images.first().image // Extract the first image URL
-        } else {
-            "" // Fallback URL or placeholder
-        }
+        holder.Ad_price.text = "$ " + cartProduct.price
+        holder.Ad_quantity.text = cartProduct.cartQuantity.toString()
+
+        // Use the productImagesMap to find the image URL for the cart item
+        val imageUrl = productImagesMap[cartProduct.id.toString()] ?: ""
+        Log.d("cartfragAdapter", "Image URL: $imageUrl")
+
         // Load the image using Glide
         Glide.with(holder.itemView.context)
             .load(imageUrl)
-            .placeholder(R.drawable.placeholder_image) // Placeholder image
-            .error(R.drawable.error_image) // Error image
+            .placeholder(R.drawable.placeholder_image)
+            .error(R.drawable.error_image)
             .into(holder.Ad_image)
-        // Display brand and unit if available
-        holder.Ad_unit.text = cartProduct.title //apparently the Model of the product
 
-        //holder.Ad_quantity.text = cartProduct.quantity.toString() for quantity later
+        // Display brand and unit if available
+        holder.Ad_unit.text = cartProduct.title
+
+        //Remove item from cart
+        holder.itemView.findViewById<ImageView>(R.id.removeProduct).setOnClickListener {
+            val productId = cart_list[position].id
+            listener.onProductRemove(productId)
+        }
     }
 
     fun updateProducts(newProducts: List<CartProduct>) {

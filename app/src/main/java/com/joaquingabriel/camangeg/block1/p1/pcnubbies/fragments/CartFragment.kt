@@ -13,7 +13,7 @@ import com.joaquingabriel.camangeg.block1.p1.pcnubbies.api.NubbiesClient
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.CartProduct
 import kotlinx.coroutines.launch
 
-class CartFragment : Fragment(R.layout.cartsection) {
+class CartFragment : Fragment(R.layout.cartsection), cartfragAdapter.OnProductRemoveListener {
 
     private lateinit var recyclerview: RecyclerView
     private lateinit var cartAdapter: cartfragAdapter
@@ -21,11 +21,16 @@ class CartFragment : Fragment(R.layout.cartsection) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Fetch product images before fetching cart items
+        lifecycleScope.launch {
+            NubbiesClient.fetchProductResponse()
+        }
+
         recyclerview = view.findViewById(R.id.cartItems)
         recyclerview.layoutManager = LinearLayoutManager(context)
 
         // Initialize the adapter with an empty list
-        cartAdapter = cartfragAdapter(mutableListOf())
+        cartAdapter = cartfragAdapter(mutableListOf(), this)
         recyclerview.adapter = cartAdapter
 
         // Fetch cart items from your API
@@ -37,6 +42,7 @@ class CartFragment : Fragment(R.layout.cartsection) {
             val response = NubbiesClient.instance.getCartItems()
             if (response.isSuccessful) {
                 val cartResponse = response.body()
+                Log.d("NubbiesClient", "CartResponse: $cartResponse")
                 val cartItems = cartResponse?.data?.items ?: emptyList()
                 val cartProducts = cartResponse?.data?.products ?: emptyList()
 
@@ -53,6 +59,18 @@ class CartFragment : Fragment(R.layout.cartsection) {
         }
     }
 
+    override fun onProductRemove(productId: Int) {
+        lifecycleScope.launch {
+            val response = NubbiesClient.instance.removeFromCart(productId)
+            if (response.isSuccessful) {
+                // Handle successful removal, e.g., update the UI
+                fetchCartItems() // Refresh the cart items
+            } else {
+                // Handle error
+            }
+        }
+    }
 }
+
 
 

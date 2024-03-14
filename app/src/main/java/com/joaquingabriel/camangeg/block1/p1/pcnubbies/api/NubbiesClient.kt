@@ -4,6 +4,7 @@ import Product
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
+import com.google.gson.GsonBuilder
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.AddToCartRequest
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.CartProduct
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.DefaultResponse
@@ -27,6 +28,29 @@ object NubbiesClient {
         instance = createInstance(context)
     }
 
+    val productImagesMap = mutableMapOf<String, String>()
+
+    suspend fun fetchProductResponse(): Map<String, String> {
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = instance.getProductList(null, null) // Adjust this call based on your actual API endpoint
+                if (response.isSuccessful) {
+                    val productResponse = response.body()
+                    productResponse?.data?.forEach { product ->
+                        // Assuming you want the first image URL for each product
+                        val imageUrl = product.product_images?.firstOrNull()?.image ?: "No image URL found"
+                        productImagesMap[product.id.toString()] = imageUrl
+                    }
+                } else {
+                    Log.e("NubbiesClient", "Error fetching product response: ${response.errorBody()?.string()}")
+                }
+            } catch (e: Exception) {
+                Log.e("NubbiesClient", "Error fetching product response", e)
+            }
+            productImagesMap
+        }
+    }
+
 
     suspend fun fetchCartProducts(): List<CartProduct> {
         return withContext(Dispatchers.IO) {
@@ -36,6 +60,12 @@ object NubbiesClient {
                 if (response.isSuccessful) {
                     val cartResponse = response.body()
                     cartResponse?.data?.let { data ->
+                        // Log the image URLs for each product
+                        data.products.forEach { cartProduct ->
+                            val imageUrl = cartProduct.product_images?.firstOrNull()?.image ?: "No image URL found"
+                            Log.d("cartfragAdapter", "Product: ${cartProduct.title}, Image URL: $imageUrl")
+                        }
+
                         // Map the quantity from CartItem to CartProduct
                         data.products.map { cartProduct ->
                             val cartItem = data.items.find { it.productId == cartProduct.id }
@@ -43,7 +73,6 @@ object NubbiesClient {
                             Log.d("NubbiesClient", "Product: ${cartProduct.title}, Cart Quantity: ${updatedCartProduct.cartQuantity}")
                             updatedCartProduct
                         }
-
                     } ?: emptyList()
                 } else {
                     Log.e("NubbiesClient", "Error fetching cart products: ${response.errorBody()?.string()}")
@@ -55,6 +84,7 @@ object NubbiesClient {
             }
         }
     }
+
 
 
 
@@ -106,19 +136,17 @@ object NubbiesClient {
             .readTimeout(60, TimeUnit.SECONDS)
             .build()
 
+        val gson = GsonBuilder()
+            .setLenient()
+            .create()
 
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            //.addCallAdapterFactory(CoroutineCallAdapterFactory()) // Add this line
+            .addConverterFactory(GsonConverterFactory.create(gson)) // Use the modified Gson instance here
             .client(okHttpClient)
             .build()
 
-        //val instance: NubbiesAPI = retrofit.create(NubbiesAPI::class.java)
-
         return retrofit.create(NubbiesAPI::class.java)
-
-
     }
-    private const val BASE_URL = "https://pcnubbies.pcnubbies.tech/api/"
+    private const val BASE_URL = "https://pcnubbies2.pcnubbies.tech/api/"
 }

@@ -31,7 +31,7 @@ class cpufragAdapter(
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val product = frag_cpuproducts[position]
         holder.Ad_title.text = product.title
-        holder.Ad_price.text = product.price
+        holder.Ad_price.text = "$" + product.price
         // Assuming product.product_images is a list of image URLs or drawable resource names
         // You'll need to decide how to handle multiple images or select one to display
         val imageUrl = if (product.product_images != null && product.product_images.isNotEmpty()){
@@ -48,24 +48,6 @@ class cpufragAdapter(
         holder.itemView.setOnClickListener {
             listener.onItemClick(product.id) // Notify the listener about the click
         }
-
-//        holder.itemView.setOnClickListener {
-//            val productId = product.id
-//            val quantity = 1
-//            lifecycleOwner.lifecycleScope.launch {
-//                try {
-//                    val response = NubbiesClient.addProductToCart(productId, quantity)
-//                    if (response.isSuccessful) {
-//                        Toast.makeText(holder.itemView.context, "Product added to cart", Toast.LENGTH_SHORT).show()
-//                        // Optionally, refresh the cart or navigate to the CartFragment
-//                    } else {
-//                        Toast.makeText(holder.itemView.context, "Failed to add product to cart", Toast.LENGTH_SHORT).show()
-//                    }
-//                } catch (e: Exception) {
-//                    Toast.makeText(holder.itemView.context, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
-//                }
-//            }
-//        }
     }
 
     interface OnItemClickListener {

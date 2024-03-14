@@ -3,27 +3,22 @@ package com.joaquingabriel.camangeg.block1.p1.pcnubbies
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.JsonReader
 import android.util.Log
-import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
-import android.widget.RadioButton
-import android.widget.RadioGroup
-import android.widget.Spinner
 import android.widget.Toast
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.api.AuthPrefs
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.api.NubbiesClient
-import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.DefaultResponse
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.LoginResponse
+import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.UserViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.io.StringReader
+import androidx.lifecycle.ViewModelProvider
 
 class Login : AppCompatActivity() {
+
+    private lateinit var userViewModel: UserViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +29,9 @@ class Login : AppCompatActivity() {
 
         val loginButton = findViewById<Button>(R.id.login_button)
         val registerButton = findViewById<Button>(R.id.toregister_button)
+
+        // Initialize the ViewModel
+        userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
         // Initialize the NubbiesClient here
         NubbiesClient.setSharedPreferences(this)
@@ -69,6 +67,12 @@ class Login : AppCompatActivity() {
                             val userProfile = loginResponse.user
                             Toast.makeText(applicationContext, "Logged in as ${userProfile.name}", Toast.LENGTH_LONG).show()
 
+                            // Set the user data in the ViewModel
+                            // Example of calling setUserData after a successful login
+                            Log.d("LoginActivity", "Calling setUserData with: ${userProfile.name}, ${userProfile.email}")
+                            userViewModel.setUserData(userProfile)
+
+
                             val intent = Intent(this@Login, MainActivity::class.java)
                             startActivity(intent)
                         } else {
@@ -83,6 +87,5 @@ class Login : AppCompatActivity() {
                     }
                 })
         }
-
     }
 }

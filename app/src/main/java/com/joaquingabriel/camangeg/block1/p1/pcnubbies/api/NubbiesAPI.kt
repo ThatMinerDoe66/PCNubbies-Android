@@ -10,6 +10,7 @@ import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.UserProfile
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
@@ -36,6 +37,12 @@ interface NubbiesAPI {
     suspend fun addToCart(
         @Path("product_id") productId: Int,
         @Body request: AddToCartRequest
+    ): Response<DefaultResponse>
+
+    //Deletes from Cart
+    @DELETE("cart/{product_id}")
+    suspend fun removeFromCart(
+        @Path("product_id") productId: Int
     ): Response<DefaultResponse>
 
 
