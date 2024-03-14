@@ -20,7 +20,7 @@ class guideStep1 : Fragment() {
         val next: ImageView = view.findViewById(R.id.next_button)
 
         goBack.setOnClickListener {
-            requireActivity().supportFragmentManager.popBackStack()
+            replaceFragment(GuideFragment())
         }
 
         next.setOnClickListener {
