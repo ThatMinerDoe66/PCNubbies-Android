@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.widget.AppCompatImageButton
 import androidx.recyclerview.widget.RecyclerView
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.R
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.models.CartProduct
@@ -13,14 +14,22 @@ import com.bumptech.glide.Glide // Make sure to import Glide
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.api.NubbiesClient
 import com.joaquingabriel.camangeg.block1.p1.pcnubbies.api.NubbiesClient.productImagesMap
 
-class cartfragAdapter(private var cart_list: MutableList<CartProduct>,
-                      private val listener: OnProductRemoveListener) :
+class cartfragAdapter(
+    var cart_list: MutableList<CartProduct>,
+    private val removeListener: OnProductRemoveListener,
+    private val quantityChangeListener: OnQuantityChangeListener) :
     RecyclerView.Adapter<cartfragAdapter.MyViewHolder>() {
 
     // Define the interface
     interface OnProductRemoveListener {
         fun onProductRemove(productId: Int)
     }
+
+    interface OnQuantityChangeListener {
+        fun onQuantityIncrease(productId: Int)
+        fun onQuantityDecrease(productId: Int)
+    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.cart_list, parent, false)
@@ -55,16 +64,42 @@ class cartfragAdapter(private var cart_list: MutableList<CartProduct>,
         //Remove item from cart
         holder.itemView.findViewById<ImageView>(R.id.removeProduct).setOnClickListener {
             val productId = cart_list[position].id
-            listener.onProductRemove(productId)
+            removeListener.onProductRemove(productId)
+        }
+
+        //
+        holder.itemView.findViewById<AppCompatImageButton>(R.id.minus_quantity).setOnClickListener {
+            val productId = cart_list[position].id
+            quantityChangeListener.onQuantityDecrease(productId)
+        }
+
+        holder.itemView.findViewById<AppCompatImageButton>(R.id.add_quantity).setOnClickListener {
+            val productId = cart_list[position].id
+            quantityChangeListener.onQuantityIncrease(productId)
         }
     }
 
-    fun updateProducts(newProducts: List<CartProduct>) {
-        cart_list.clear()
-        cart_list.addAll(newProducts)
+    fun updateProducts(newCartList: List<CartProduct>) {
+        cart_list = newCartList.toMutableList()
         notifyDataSetChanged()
-        Log.d("cpufragAdapter", "Data updated. New size: ${cart_list.size}")
     }
+    fun updateQuantity(position: Int, newQuantity: Int) {
+        cart_list[position].cartQuantity = newQuantity
+        notifyItemChanged(position)
+    }
+
+    fun removeItem(position: Int) {
+        cart_list.removeAt(position)
+        notifyItemRemoved(position)
+    }
+
+//Old
+//    fun updateProducts(newProducts: List<CartProduct>) {
+//        cart_list.clear()
+//        cart_list.addAll(newProducts)
+//        notifyDataSetChanged()
+//        Log.d("cpufragAdapter", "Data updated. New size: ${cart_list.size}")
+//    }
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val Ad_name: TextView = itemView.findViewById(R.id.itemBrand)

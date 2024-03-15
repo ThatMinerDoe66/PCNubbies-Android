@@ -45,6 +45,12 @@ interface NubbiesAPI {
         @Path("product_id") productId: Int
     ): Response<DefaultResponse>
 
+    //Adjust Quantity in Cart
+    @POST("cart/{product_id}")
+    suspend fun updateCartQuantity(
+        @Path("product_id") productId: Int,
+        @Query("quantity") quantity: Int
+    ): Response<CartResponse>
 
     //Register
     @FormUrlEncoded

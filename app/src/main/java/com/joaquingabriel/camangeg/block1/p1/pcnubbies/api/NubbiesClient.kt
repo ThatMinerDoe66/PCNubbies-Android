@@ -148,5 +148,5 @@ object NubbiesClient {
 
         return retrofit.create(NubbiesAPI::class.java)
     }
-    private const val BASE_URL = "https://pcnubbies2.pcnubbies.tech/api/"
+    private const val BASE_URL = "https://pcnubbies.pcnubbies.tech/api/"
 }

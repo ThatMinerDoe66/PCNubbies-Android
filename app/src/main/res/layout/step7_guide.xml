@@ -135,30 +135,29 @@
             android:layout_marginEnd="15dp">
 
             <TextView
-                android:id="@+id/prep7no1"
-                android:layout_width="match_parent"
+                android:id="@+id/prepno1"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="@string/prep7_no1"
+                android:text="1) Identify your primary use (e.g., gaming, video editing) and set a budget."
                 android:fontFamily="@font/inter_med"
                 android:textColor="@color/dark_purple"
                 android:textSize="20sp"
                 android:lineSpacingExtra="15dp"
                 android:layout_marginEnd="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/prep7no1img"/>
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
             <ImageView
-                android:id="@+id/prep7no1img"
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
                 android:src="@drawable/gpu1"
-                android:layout_marginTop="30dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/prep7no1"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.583"
+                app:layout_constraintStart_toEndOf="@id/prepno1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.567" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -170,31 +169,30 @@
             android:layout_marginEnd="15dp">
 
             <TextView
-                android:id="@+id/prep7no2"
+                android:id="@+id/prepno2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:lineSpacingExtra="15dp"
-                android:text="@string/prep7_no2"
+                android:text="2)  Ensure the GPU fits your motherboard's PCIe slot and your power supply can handle its power requirements."
                 android:fontFamily="@font/inter_med"
                 android:textColor="@color/dark_purple"
                 android:textSize="20sp"
-                android:layout_marginTop="30dp"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/prep7no2img"/>
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/prep7no2img"
+
                 android:layout_width="match_parent"
                 android:layout_height="230dp"
                 android:src="@drawable/gpu2"
                 android:scaleType="fitXY"
                 android:layout_marginTop="30dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/prepno2"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/prep7no2"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -207,29 +205,26 @@
             android:layout_marginEnd="15dp">
 
             <TextView
-                android:id="@+id/prep7no3"
-                android:layout_width="match_parent"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
-                android:text="@string/prep7_no3"
+                android:text="3) Research benchmarks and reviews to find a GPU within your budget that offers the best performance for your needs."
                 android:fontFamily="@font/inter_med"
                 android:textColor="@color/dark_purple"
                 android:textSize="20sp"
                 android:lineSpacingExtra="15dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/prepno3img"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/prep7no3img"/>
+                app:layout_constraintBottom_toBottomOf="parent" />
 
             <ImageView
-                android:id="@+id/prep7no3img"
-                android:layout_width="match_parent"
-                android:layout_height="220dp"
+                android:id="@+id/prepno3img"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
                 android:src="@drawable/gpu3"
-                android:layout_marginTop="30dp"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/prep7no3"/>
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

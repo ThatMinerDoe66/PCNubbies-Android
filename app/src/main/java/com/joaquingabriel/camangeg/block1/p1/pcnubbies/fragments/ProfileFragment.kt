@@ -24,6 +24,7 @@ class ProfileFragment : Fragment() {
 
     private lateinit var userViewModel: UserViewModel
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
