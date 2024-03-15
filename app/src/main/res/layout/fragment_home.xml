@@ -25,7 +25,7 @@
                 android:id="@+id/homeicon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="PCNUBBIES"
+                android:text="Dashboard"
                 android:textAlignment="center"
                 android:layout_gravity="center"
                 android:textColor="@color/white"
@@ -40,35 +40,26 @@
         <LinearLayout
             android:id="@+id/welcometab"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
+            android:layout_height="260dp"
+            android:layout_marginBottom="25dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="411dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="-10dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="10dp"
-                android:background="@color/dark_purple">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/purple150">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:layout_marginTop="9dp"
-                    android:text="Dashboard\n(maybe carousel here)"
-                    android:textAlignment="center"
-                    android:gravity="center"
-                    android:textColor="@color/whitish_yellow"
-                    android:textSize="25dp"
-                    android:textStyle="bold"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="240dp"
+                    android:layout_height="240dp"
+                    android:src="@drawable/logonubbies"
+                    android:scaleType="fitXY"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent">
-
-                </TextView>
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
                 <!--Add image in background later-->
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
@@ -116,7 +107,9 @@
                         app:layout_constraintTop_toTopOf="parent" />
                     <!--Add image in background later-->
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
             </androidx.cardview.widget.CardView>
+
         </LinearLayout>
 
 
@@ -165,10 +158,11 @@
                         app:layout_constraintTop_toTopOf="parent" />
                     <!--Add image in background later-->
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
             </androidx.cardview.widget.CardView>
+
         </LinearLayout>
 
-
-
     </LinearLayout>
+
 </ScrollView>

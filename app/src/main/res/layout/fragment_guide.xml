@@ -29,81 +29,78 @@
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="30dp"
-                android:textStyle="bold"
+                android:textStyle="bold">
 
-                ></TextView>
+            </TextView>
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/banner1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="0.2"
-                android:orientation="vertical">
-
-            </LinearLayout>
+            android:layout_height="wrap_content">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="400dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="5dp"
-                android:background="@color/dark_purple">
+                android:layout_width="match_parent"
+                android:layout_height="190dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/guide_banner"
+                    android:scaleType="fitXY"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:text="Featured"
+                    android:text="Guide"
                     android:textColor="@color/white"
                     android:textSize="30dp"
                     android:textStyle="bold"
-                    tools:layout_editor_absoluteX="5dp"
-                    tools:layout_editor_absoluteY="5dp"></TextView>
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                </TextView>
                 <!--Add image in background later-->
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
 
         <!--Buttons Area (1st layer)-->
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:id="@+id/buttonLayer1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="0.2"
-                android:orientation="vertical"></LinearLayout>
+            android:layout_height="120dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:cardCornerRadius="15dp">
 
             <!--STEP 1-->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="360dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@color/purple_200">
-
 
                 <ImageView
                     android:id="@+id/guide_step1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/btn_guide_step1"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="0dp" />
+                    android:scaleType="fitXY"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -113,93 +110,96 @@
                     android:textColor="@color/white"
                     android:textSize="30dp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/guide_step1">
-
-                </TextView>
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
                 <!--Add image in background later-->
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-        </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <!--Buttons Area (2nd layer)-->
         <LinearLayout
             android:id="@+id/buttonLayer2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp">
+            android:layout_marginTop="30dp">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="0.2"
-                android:orientation="vertical"></LinearLayout>
-
-            <!--STEP 2-->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="170dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
-                android:background="@color/purple_200">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-
-                <ImageView
-                    android:id="@+id/guide_step2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/btn_guide_step2"
-                    tools:layout_editor_absoluteX="5dp"
-                    tools:layout_editor_absoluteY="0dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_margin="5dp"
-                    android:text="CPU"
-                    android:textColor="@color/white"
-                    android:textSize="30dp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
+                <!--STEP 2-->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardview_step2"
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    app:cardCornerRadius="15dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/guide_step2">
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/cardview_step3">
 
-                </TextView>
-                <!--Add image in background later-->
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <ImageView
+                        android:id="@+id/guide_step2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/btn_guide_step2"
+                        android:scaleType="fitXY"/>
+                    <!--Add image in background later-->
 
-            <!--STEP 3-->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="170dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
-                android:background="@color/purple_200">
 
-                <ImageView
-                    android:id="@+id/guide_step3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/btn_guide_step3"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="0dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:text="CPU"
+                        android:textColor="@color/white"
+                        android:textSize="30dp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/guide_step2"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_margin="5dp"
-                    android:text="RAM"
-                    android:textColor="@color/white"
-                    android:textSize="30dp"
-                    android:textStyle="bold"
+                </androidx.cardview.widget.CardView>
+
+                <!--STEP 3-->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardview_step3"
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    app:cardCornerRadius="15dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"></TextView>
-                <!--Add image in background later-->
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cardview_step2">
+
+                    <ImageView
+                        android:id="@+id/guide_step3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/btn_guide_step3"
+                        android:scaleType="fitXY"/>
+                    <!--Add image in background later-->
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        android:text="RAM"
+                        android:textColor="@color/white"
+                        android:textSize="30dp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                </androidx.cardview.widget.CardView>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
@@ -209,77 +209,77 @@
             android:id="@+id/buttonLayer3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp">
+            android:layout_marginTop="30dp">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="0.2"
-                android:orientation="vertical"></LinearLayout>
 
             <!--STEP 4-->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="170dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
-                android:background="@color/purple_200">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-
-                <ImageView
-                    android:id="@+id/guide_step4"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/btn_guide_step4"
-                    tools:layout_editor_absoluteX="5dp"
-                    tools:layout_editor_absoluteY="0dp" />
-
-                <TextView
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="Motherboard"
-                    android:textColor="@color/white"
-                    android:textSize="25dp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardview_step4"
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    app:cardCornerRadius="15dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/guide_step4">
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/cardview_step5">
 
-                </TextView>
-                <!--Add image in background later-->
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <ImageView
+                        android:id="@+id/guide_step4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/btn_guide_step4"
+                        android:scaleType="fitXY"/>
+                    <!--Add image in background later-->
 
-            <!--STEP 5-->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="170dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
-                android:background="@color/purple_200">
+                    <TextView
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="Motherboard"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center"
+                        android:textSize="25dp"
+                        android:textStyle="bold"/>
 
-                <ImageView
-                    android:id="@+id/guide_step5"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/btn_guide_step5"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="0dp" />
+                </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_margin="5dp"
-                    android:text="Power Supply"
-                    android:textColor="@color/white"
-                    android:textSize="25dp"
-                    android:textStyle="bold"
+                <!--STEP 5-->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardview_step5"
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    app:cardCornerRadius="15dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"></TextView>
-                <!--Add image in background later-->
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cardview_step4">
+
+                    <ImageView
+                        android:id="@+id/guide_step5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/btn_guide_step5"
+                        android:scaleType="fitXY"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_margin="5dp"
+                        android:text="Power Supply"
+                        android:textColor="@color/white"
+                        android:textSize="25dp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                </androidx.cardview.widget.CardView>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
@@ -289,82 +289,77 @@
             android:id="@+id/buttonLayer4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="50dp">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_weight="0.2"
-                android:orientation="vertical"></LinearLayout>
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="100dp">
 
             <!--STEP 6-->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="170dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
-                android:background="@color/purple_200">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-
-                <ImageView
-                    android:id="@+id/guide_step6"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/btn_guide_step6"
-                    tools:layout_editor_absoluteX="5dp"
-                    tools:layout_editor_absoluteY="0dp" />
-
-                <TextView
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="SDD"
-                    android:textColor="@color/white"
-                    android:textSize="25dp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
+                <!--STEP 6-->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardview_step6"
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    app:cardCornerRadius="15dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/cardview_step7">
 
-                </TextView>
-                <!--Add image in background later-->
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <ImageView
+                        android:id="@+id/guide_step6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/btn_guide_step6" />
+                    <!--Add image in background later-->
 
-            <!--STEP 7-->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="170dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"
-                android:background="@color/veryDark_purple">
+                    <TextView
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="SDD"
+                        android:textColor="@color/white"
+                        android:textSize="25dp"
+                        android:textStyle="bold"/>
 
-                <ImageView
-                    android:id="@+id/guide_step7"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/btn_guide_step7"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="0dp" />
+                </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_margin="5dp"
-                    android:text="GPU"
-                    android:textColor="@color/white"
-                    android:textSize="25dp"
-                    android:textStyle="bold"
+                <!--STEP 7-->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardview_step7"
+                    android:layout_width="170dp"
+                    android:layout_height="120dp"
+                    app:cardCornerRadius="15dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"></TextView>
-                <!--Add image in background later-->
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cardview_step6">
+
+                    <ImageView
+                        android:id="@+id/guide_step7"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/btn_guide_step7" />
+                    <!--Add image in background later-->
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_margin="5dp"
+                        android:text="GPU"
+                        android:textColor="@color/white"
+                        android:textSize="25dp"
+                        android:textStyle="bold"/>
+
+                </androidx.cardview.widget.CardView>
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
 
     </LinearLayout>
+
 </ScrollView>
